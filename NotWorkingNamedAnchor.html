@@ -1,0 +1,1225 @@
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Wontok ONE - Staff Internet Security Offer</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="/Content/frontend/assets/js/plugins/bootstrap/css/bootstrap.min.css">
+    <!-- Fonts -->
+    <link rel="stylesheet" href="/Content/frontend/assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/Content/frontend/assets/css/simple-line-icons.css">
+    <!-- CSS Animate -->
+    <link rel="stylesheet" href="/Content/frontend/assets/css/animate.css">
+    <!-- Carousel -->
+    <link rel="stylesheet" href="/Content/frontend/assets/js/plugins/carousel/owl.carousel.css">
+    <!-- Custom styles for this theme -->
+    <link rel="stylesheet" href="/Content/frontend/assets/css/main.css">
+    <!-- Feature detection -->
+    <script src="/Content/frontend/assets/js/vendor/modernizr-2.6.2.min.js"></script>
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="~/Content/frontend/assets/js/vendor/html5shiv.js"></script>
+    <script src="~/Content/frontend/assets/js/vendor/respond.min.js"></script>
+    <![endif]-->
+    <script src="/Content/frontend/assets/js/vendor/jquery-1.11.1.min.js"></script>
+    <link href="/Content/frontend/assets/css/idsafe.css" rel="stylesheet" />
+
+    <script src="/Scripts/public.accordion.js"></script>
+    <script src="/Scripts/public.ajaxcart.js"></script>
+    <script src="/Scripts/public.common.js"></script>
+    <script src="/Scripts/public.onepagecheckout.js"></script>
+    <script src="/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+</head>
+
+<body>
+  
+
+    <!-- NAVBAR
+    ================================================== -->
+    <!-- <div id="rhsRibbon" class="corner-ribbon top-right sticky" style="cursor: pointer; background-color: rgb(226, 226, 226);">Corporate</div>-->
+    
+
+<div class="header">
+    
+    <div class="header-options-wrapper">
+        <div class="header-selectors-wrapper">
+            
+        </div>
+        <div style="background-color: #f5f5f5">
+    <div class="container" style="padding-top:15px; padding-bottom:15px;">
+        <div class="row">
+                <div class="col-md-7">
+                    <h5>Already a subscriber?&nbsp;&nbsp; <a href="/login"><button type="button" class="btn btn-default"><i class="fa fa-lock"></i> Login to My Account</button></a></h5>
+                </div>
+            <div class="col-md-5" style="padding-left:0px !important;padding-top:5px !important;" align="right" id="divShoppingCartColumn">
+                <div id="topcartlink">
+                    <a href="/cart" class="ico-cart">
+
+                        <span class="cart-qty">0</span>
+                        <span class="cart-label">Shopping cart</span>
+                        
+<span class="cart-sum">$0.00 incl GST</span>
+                    </a>
+                </div>
+                <div id="flyout-cart" class="flyout-cart">
+    <div class="mini-shopping-cart">
+        <div class="count">
+You have no items in your shopping cart.        </div>
+    </div>
+</div>
+
+
+                <script type="text/javascript">
+                    $(document).ready(function () {
+                        $('.header').on('mouseenter', '#topcartlink', function () {
+                            $('#flyout-cart').addClass('active');
+                        });
+                        $('.header').on('mouseleave', '#topcartlink', function () {
+                            $('#flyout-cart').removeClass('active');
+                        });
+                        $('.header').on('mouseenter', '#flyout-cart', function () {
+                            $('#flyout-cart').addClass('active');
+                        });
+                        $('.header').on('mouseleave', '#flyout-cart', function () {
+                            $('#flyout-cart').removeClass('active');
+                        });
+                    });
+                </script>
+            </div>
+
+            <div class="col-md-4" style="padding-left:0px !important;padding-top:5px !important;" align="left" id="divShoppingCartColumnSmall">
+                <div id="topcartlink">
+                    <a href="/cart" class="ico-cart">
+
+                        <span class="cart-qty">0</span>
+                        <span class="cart-label">Shopping cart</span>
+                        
+<span class="cart-sum">$0.00 incl GST</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+    //$("a.account").attr("href", "/customer/dashboard");
+    $("#aDashboard").attr("href", "#");
+    $("#aDashboard").click(function () {
+     
+        $.ajax({
+            url: "/Home/IsSubscribed",
+            success: function (result) {
+              
+                if (result === "false") {
+
+                    $("#lbForceSubscriptionAnchor").click();
+                }
+                else if (result === "checkout") {
+                    $("#lbForceSubscriptionCheckoutAnchor").click()
+                }
+                else if (result === "true") {
+                    window.location = "/customer/dashboard"
+                }
+               
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                console.log("Error Resetting Licence Key-xhr:" + xhr);
+                console.log("Error Resetting Licence Key-ajaxOptions:" + ajaxOptions);
+                console.log("Error Resetting Licence Key-thrownError:" + thrownError);
+            }
+        });
+    });
+
+</script>
+    </div>
+</div>
+<script type="text/javascript">
+    //$("a.account").attr("href", "/customer/dashboard");
+    $("a.account").attr("href", "#");
+    $("a.account").click(function () {
+     
+        $.ajax({
+            url: "/Home/IsSubscribed",
+            success: function (result) {
+              
+                if (result === "false") {
+
+                    $("#lbForceSubscriptionAnchor").click();
+                }
+                else if (result === "checkout") {
+                    $("#lbForceSubscriptionCheckoutAnchor").click()
+                }
+                else if (result === "true") {
+                    window.location = "/customer/dashboard"
+                }
+               
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                console.log("Error Resetting Licence Key-xhr:" + xhr);
+                console.log("Error Resetting Licence Key-ajaxOptions:" + ajaxOptions);
+                console.log("Error Resetting Licence Key-thrownError:" + thrownError);
+            }
+        });
+    });
+</script>
+
+<script type="text/javascript">
+    //$("a.account").attr("href", "/customer/dashboard");
+    $("a.account").attr("href", "#");
+    $("a.account").click(function () {
+
+        $.ajax({
+            url: "/Home/IsSubscribed",
+            success: function (result) {
+
+                if (result === "false") {
+
+                    $("#lbForceSubscriptionAnchor").click();
+                }
+                else if (result === "checkout") {
+                    $("#lbForceSubscriptionCheckoutAnchor").click()
+                }
+                else if (result === "true") {
+                    window.location = "/customer/dashboard"
+                }
+
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                console.log("Error Resetting Licence Key-xhr:" + xhr);
+                console.log("Error Resetting Licence Key-ajaxOptions:" + ajaxOptions);
+                console.log("Error Resetting Licence Key-thrownError:" + thrownError);
+            }
+        });
+    });
+</script>
+    <header class="navbar-wrapper">
+
+        <div class="navbar navbar-default navbar-static-top home-navbar" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <!--logo start-->
+                    <div class="brand">
+                        <img src="/Content/frontend/assets/img/wontok_one.png">
+                    </div>
+                    <!--logo end-->
+                </div>
+          
+                        <div class="navbar-collapse collapse">
+                            <ul class="nav navbar-nav pull-right" id="main-menu">
+                                <li>
+                                    <a href="#intro" >Home</a>
+                                </li>
+                                
+                                <li>
+                                    <a href="#features1">Features</a>
+                                </li>
+                                <li>
+                                    <a href="#pricing">Subscriptions</a>
+                                </li>
+                                
+                                <li>
+                                    <a href="#contact">Contact</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                
+              
+            </div>
+        </div>
+    </header>
+    <script>
+        function navbarGoto(val)
+        {
+            window.location = "/#" + val;
+        }
+
+    </script>
+    
+        
+
+<style>
+    li{
+        /*font-size:0.875em;*/
+    }
+    #contact .contact-form .form-control 
+    {
+        color:#788093 !important;
+    }
+
+    #pricing .planContainer .title h2 {
+  font-size: 2.125em;
+  font-weight: 300;
+  color: #3290C7;
+  margin: 0;
+  padding: 0.6em 0;
+}
+
+    #pricing .planContainer .options li {
+  font-weight: 700;
+  color: #3290C7;
+  line-height: 2.5;
+}
+</style>
+
+<script type="application/javascript">
+    function getIP(json) {
+       //document.write("My public IP address is: ", json.ip);
+
+        if(json.ip == "203.174.128.54")
+       {
+
+
+       }
+       else
+       {
+
+       window.location="http://tstaff.wontokone.com/404.htm";
+       }
+
+    }
+</script>
+
+<script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
+
+
+
+<!-- Intro section
+================================================== -->
+<section id="intro">
+    <div class="overlay-bg">
+        <div class="container">
+            <div class="hero">
+                <div class="row">
+                    <div class="col-xs-6 col-sm-8 col-md-5 col-lg-5 wow pulse">
+                        <header>
+                            <h1></h1>
+                            <h2 style="color:#fff; font-style:italic"></h2>
+                            <br />
+                            <p><h1 style="color:#fff; font-style:italic; text-transform:none"><span style="color:#fff; font-style:italic;font-size:16px"></span></h1></p>
+                            <p><h2 style="color:#fff; font-style:italic"</h2></p>
+                        </header>
+                        
+                    </div>
+                    <div class="hidden-xs hidden-sm col-md-7 col-lg-7">
+                        
+                    </div>
+                    <div class="col-xs-6 col-sm-4 hidden-md hidden-lg">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Features Section
+================================================== -->
+
+<!-- Info
+   ================================================== -->
+
+
+<section id="features1">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <header>
+                    <h1>Features</h1>
+                    <p>Security Suite & Mobile Security helps protect your computers and devices against viruses and other malware together with SafeDesktop which gives you piece of mind when banking and shopping online.</p>
+                    <div class="spacer"></div>
+                </header>
+            </div>
+        </div>
+        <div class="row">
+            <div>
+                <div class="col-md-12">
+                    <div class="tab-wrapper tab-left ">
+                        <ul class="nav nav-tabs">
+                            
+                            <li class="active">
+                                <a href="#ss" data-toggle="tab" aria-expanded="false"><img src="/Content/frontend/assets/img/ss_icon_50x50.png">&nbsp; &nbsp;Security Suite </a>
+                            </li>
+                            <li class="">
+                                <a href="#ms" data-toggle="tab" aria-expanded="false"><img src="/Content/frontend/assets/img/ms_icon_50x50.png">&nbsp; &nbsp;Mobile Security</a>
+                            </li>
+                            <li>
+                                <a href="#sd" data-toggle="tab" aria-expanded="true"><img src="/Content/frontend/assets/img/sc_icon_50x50.png">&nbsp; &nbsp;Safe Desktop</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content" style="height:208px !important;">
+                         
+                            <div class="tab-pane active" id="ss">
+                                <p>SafeCentral Security Suite has been developed from the ground up and uses a proprietary combination of multiple antimalware components to provide fast, effective protection.</p>
+                                <ul style="list-style:disc;font-size:0.875em;">
+                                    <li>Desktop protection for your Windows and Mac computers</li>
+                                    <li>Lightweight, easy to install, and protects user privacy</li>
+                                    <li>SafeCentral Security Suite for Windows ranked top in the Virus Bulletin VB100</li>
+                                </ul>
+                                <p>See full list of <a data-backdrop="static" data-keyboard="false" class="" data-toggle="modal" id="lbCompareDevicesSS" href="#" data-target="#CompatibleDevicesSS">compatible devices</a></p>
+                             
+                            </div>
+                            <div class="tab-pane" id="ms">
+                                <p>SafeCentral Mobile Security provides complete mobile security for Android smartphones and tablets.</p>
+                                <ul style="list-style:disc;font-size:0.875em;">
+                                    <li>Protects your device against identity theft and other threats with real-time protection</li>
+                                    <li>Uses cloud-based scanning technology to protect you against the latest threats without straining your devices battery life</li>
+                                </ul>
+                            </div>
+                            <div class="tab-pane" id="sd">
+                                <p>SafeCentral SafeDesktop keeps online banking and shopping transactions safe from thieves who try to steal identities, or drain bank accounts. Today, antivirus software alone won’t stop them in time.</p>
+
+                                <p>Use SafeCentral SafeDesktop for a safe desktop and browsing for accessing websites that require exchange of personal or financial information.</p>
+
+                                <p>Even in the worst-case scenarios, when malware is already on the endpoint device, SafeCentral SafeDesktop protects credentials, login information and any personal or financial data-in-use at the deepest layer during the active online session.
+                                <p>See full list of <a data-backdrop="static" data-keyboard="false" class="" data-toggle="modal" id="lbCompareDevicesSD" href="#" data-target="#CompatibleDevicesSD">compatible devices</a></p>
+                            </div>
+                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Pricing
+    ================================================== -->
+    <section id="pricing">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <header>
+                        <h1>Subscriptions</h1>
+                        <div class="spacer"></div>
+                    </header>
+                </div>
+            </div>
+            <div class="row">
+                <div id="pricePlans">
+                    <div class="col-md-12">
+                        <ul id="plan1">
+                            <li class="plan wow zoomIn">
+                                <ul class="planContainer">
+                                    <li class="title">
+                                        <h2>Staff Internet Security Offer</h2>
+                                    </li>
+                                    <li class="price">
+                                        <p>$20 / 12 months</p>
+                                    </li>
+                                    <li>
+                                        <ul class="options">
+                                            <li>
+                                                Security Suite/Mobile Security  <span> – Protect up to 6 Windows/Mac computers or Android devices</span>
+                                            </li>
+                                            <li>
+                                                Safe Desktop <span> – Protect up to 6 Windows computers</span>
+                                            </li>
+
+                                        </ul>
+                                    </li>
+                                    <li class="button">
+                                        <a href="/productview?productid=15">Purchase</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <!-- End ul#plans -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Contact
+    ================================================== -->
+    <section id="contact" style="background:#F0F3F6 !important">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12 text-center">
+                    <header>
+                        <h1>Contact Us</h1>
+                        <div class="spacer"></div>
+                        <p>Still have questions? Anything we can help with? Get in touch with us below. </p>
+                    </header>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-11 col-md-offset-1 col-sm-12 col-xs-12">
+                    <div class="row">
+                        <div class="col-sm-12 col-md-12 col-lg-12 text-center" id="divContactForm">
+
+<form action="/ContactForm?Length=4" data-ajax="true" data-ajax-method="POST" data-ajax-mode="replace" data-ajax-update="#divContactForm" id="frmContactForm" method="post"><input name="__RequestVerificationToken" type="hidden" value="fuDyOW0wPuUdYPdOzfhxxKsPCfHsJW6238lCUSXAzhV3wiaDjVmquaEDvuZozDZDBdzFKmFTzsqR5GyABgt2XAjUPZRH31a_iD40oWua-wU1" />    <div class="col-md-5 col-md-offset-1 col-sm-12 col-xs-12">
+      
+        <div class="row">
+            <div class="form-group">
+                <div class="col-md-12 col-sm-4 col-xs-12">
+                    <input type="text" class="form-control" id="cfname" name="cfname" value="" required="true" placeholder="Name" style="margin-bottom:5px !important;">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-12 col-sm-4 col-xs-12">
+                    <input type="email" class="form-control" id="cfemail" name="cfemail" value="" required="true" placeholder="Email Address" style="width:100% !important">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-12 col-sm-4 col-xs-12">
+                    <input type="text" class="form-control" id="cfsubject" name="cfsubject" value="" required="true" placeholder="Subject">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-5 col-sm-12 col-xs-12">
+
+            <textarea class="form-control" id="cfmessage" name="cfmessage" required="true" cols="40" rows="8" placeholder="Message" style="margin-bottom:5px !important;"></textarea>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-11 col-sm-12 col-xs-12 text-right">
+           
+            <input type="submit" value="Submit" class="btn btn-default" id="btnContactFormSubmit">
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-12 col-sm-4 col-xs-12">
+
+        </div>
+    </div>
+    <script>
+        $(document).ready(function ()
+        {
+            $('#frmContactForm').on('submit', function (e) {
+               // if ($('#frmContactForm').valid()) {
+                    $("#btnContactFormSubmit").prop("disabled", true);
+                    $("#btnContactFormSubmit").val("Sending")
+               // }
+            });
+           
+        });
+    </script>
+</form>
+                        </div>
+                        <div class="col-sm-6 col-md-6 col-lg-6 text-center">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+
+    <!-- Modals-->
+    <div class="modal fade" id="CompatibleDevicesSS" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content" style= "width:900px" >
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">Compatible Devices – Security Suite</h4>
+            </div>
+            <div class="modal-body">
+                <!--<h4>Installation Steps</h4><br/>-->
+             
+                <style type="text/css">
+                    .tg {
+                        border-collapse: collapse;
+                        border-spacing: 0;
+                    }
+
+                        .tg td {
+                            font-family: Arial, sans-serif;
+                            font-size: 14px;
+                            padding: 10px 5px;
+                            border-style: solid;
+                            border-width: 1px;
+                            overflow: hidden;
+                            word-break: normal;
+                        }
+
+                        .tg th {
+                            font-family: Arial, sans-serif;
+                            font-size: 14px;
+                            font-weight: normal;
+                            padding: 10px 5px;
+                            border-style: solid;
+                            border-width: 1px;
+                            overflow: hidden;
+                            word-break: normal;
+                        }
+
+                        .tg .tg-yw4l {
+                            vertical-align: top;
+                        }
+                </style>
+                <p><b>Security Suite (Windows operating systems)</b></p>
+                <table class="tg">
+                    <tr>
+                        <th class="tg-yw4l">Supported Operating System</th>
+                        <th class="tg-yw4l">RAM</th>
+                        <th class="tg-yw4l">CPU</th>
+                        <th class="tg-yw4l">Hard-disk drive</th>
+                    </tr>
+                    <tr>
+                        <td class="tg-yw4l">Windows 10 – 32 bit and 64 bit versions</td>
+                        <td class="tg-yw4l">Minimum: 2GB Recommended: At least 2GB </td>
+                        <td class="tg-yw4l">Pentium 4 or better</td>
+                        <td class="tg-yw4l">Minimum of 500MB available space</td>
+                    </tr>
+                    <tr>
+                        <td class="tg-yw4l">Windows 8.1 – 32 bit and 64 bit versions</td>
+                        <td class="tg-yw4l">Minimum: 2GB Recommended: At least 2GB </td>
+                        <td class="tg-yw4l">Pentium 4 or better</td>
+                        <td class="tg-yw4l">Minimum of 500MB available space</td>
+                    </tr>
+                    <tr>
+                        <td class="tg-yw4l">Windows 8 – 32 bit and 64 bit versions</td>
+                        <td class="tg-yw4l">Minimum: 2GB Recommended: At least 2GB </td>
+                        <td class="tg-yw4l">Pentium 4 or better</td>
+                        <td class="tg-yw4l">Minimum of 500MB available space</td>
+                    </tr>
+                    <tr>
+                        <td class="tg-yw4l">Windows 7 - 32 bit and 64 bit versions, <br/> Service Pack 1 and above</td>
+                        <td class="tg-yw4l">Minimum: 2GB Recommended: At least 2GB </td>
+                        <td class="tg-yw4l">Pentium 4 or better</td>
+                        <td class="tg-yw4l">Minimum of 500MB available space</td>
+                    </tr>
+                </table>
+                <br/>
+                <p><b>Security Suite (Mac OSX operating systems)</b></p>
+                <table class="tg">
+                    <tr>
+                        <th class="tg-yw4l">Supported Operating System</th>
+                        <th class="tg-yw4l">RAM</th>
+                        <th class="tg-yw4l">CPU</th>
+                        <th class="tg-yw4l">Hard-disk drive</th>
+                    </tr>
+                    <tr>
+                        <td class="tg-yw4l">macOS Sierra (version 10.12)</td>
+                        <td class="tg-yw4l">Minimum: 2GB Recommended: At least 2GB </td>
+                        <td class="tg-yw4l">1.0GHz or better</td>
+                        <td class="tg-yw4l">Minimum of 900MB available space</td>
+                    </tr>
+                    <tr>
+                        <td class="tg-yw4l">OS X El Capitan (version 10.11)</td>
+                        <td class="tg-yw4l">Minimum: 2GB Recommended: At least 2GB </td>
+                        <td class="tg-yw4l">1.0GHz or better</td>
+                        <td class="tg-yw4l">Minimum of 900MB available space</td>
+                    </tr>
+                    <tr>
+                        <td class="tg-yw4l">OS X Yosemite (version 10.10)</td>
+                        <td class="tg-yw4l">Minimum: 2GB Recommended: At least 2GB </td>
+                        <td class="tg-yw4l">1.0GHz or better</td>
+                        <td class="tg-yw4l">Minimum of 900MB available space</td>
+                    </tr>
+                    <tr>
+                        <td class="tg-yw4l">OS X Mavericks (version 10.9)</td>
+                        <td class="tg-yw4l">Minimum: 2GB Recommended: At least 2GB </td>
+                        <td class="tg-yw4l">1.0GHz or better</td>
+                        <td class="tg-yw4l">Minimum of 900MB available space</td>
+                    </tr>
+                </table>
+            </div>
+            <!--<div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>-->
+        </div>
+    </div>
+</div>
+
+    <div class="modal fade" id="CompatibleDevicesSD" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content" style="width:900px" >
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">Compatible Devices – Safe Desktop</h4>
+            </div>
+            <div class="modal-body">
+                <!--<h4>Installation Steps</h4><br/>-->
+
+                <style type="text/css">
+                    .tg {
+                        border-collapse: collapse;
+                        border-spacing: 0;
+                    }
+
+                        .tg td {
+                            font-family: Arial, sans-serif;
+                            font-size: 14px;
+                            padding: 10px 5px;
+                            border-style: solid;
+                            border-width: 1px;
+                            overflow: hidden;
+                            word-break: normal;
+                        }
+
+                        .tg th {
+                            font-family: Arial, sans-serif;
+                            font-size: 14px;
+                            font-weight: bold;
+                            padding: 10px 5px;
+                            border-style: solid;
+                            border-width: 1px;
+                            overflow: hidden;
+                            word-break: normal;
+                        }
+
+                        .tg .tg-yw4l {
+                            vertical-align: top;
+                        }
+                </style>
+                <p><b>Safe Desktop (Windows operating systems)</b></p>
+                <table class="tg">
+                    <tr>
+                        <th class="tg-yw4l">Supported Operating System</th>
+                        <th class="tg-yw4l">RAM</th>
+                        <th class="tg-yw4l">CPU</th>
+                        <th class="tg-yw4l">Hard-disk drive</th>
+                    </tr>
+                    <tr>
+                        <td class="tg-yw4l">Windows 10 – 32 bit and 64 bit versions</td>
+                        <td class="tg-yw4l">Minimum: 2GB Recommended: At least 2GB </td>
+                        <td class="tg-yw4l">Pentium 4 or better</td>
+                        <td class="tg-yw4l">Minimum of 500MB available space</td>
+                    </tr>
+                    <tr>
+                        <td class="tg-yw4l">Windows 8.1 – 32 bit and 64 bit versions</td>
+                        <td class="tg-yw4l">Minimum: 2GB Recommended: At least 2GB </td>
+                        <td class="tg-yw4l">Pentium 4 or better</td>
+                        <td class="tg-yw4l">Minimum of 500MB available space</td>
+                    </tr>
+                    <tr>
+                        <td class="tg-yw4l">Windows 8 – 32 bit and 64 bit versions</td>
+                        <td class="tg-yw4l">Minimum: 2GB Recommended: At least 2GB </td>
+                        <td class="tg-yw4l">Pentium 4 or better</td>
+                        <td class="tg-yw4l">Minimum of 500MB available space</td>
+                    </tr>
+                    <tr>
+                        <td class="tg-yw4l">Windows 7 - 32 bit and 64 bit versions, <br /> Service Pack 1 and above</td>
+                        <td class="tg-yw4l">Minimum: 2GB Recommended: At least 2GB </td>
+                        <td class="tg-yw4l">Pentium 4 or better</td>
+                        <td class="tg-yw4l">Minimum of 500MB available space</td>
+                    </tr>
+                </table>
+
+            </div>
+            <!--<div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+        </div>-->
+        </div>
+    </div>
+</div>
+
+    <div class="modal fade" id="CompareDetails" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content" style= width="900px" ;>
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">Feature Comparison</h4>
+                </div>
+                <div class="modal-body">
+                    <!--<h4>Installation Steps</h4><br/>-->
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Information</th>
+                                <th>BASIC</th>
+                                <th>PREMIUM</th>
+                                <th>PLATINUM</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Protect</td>
+
+                            </tr>
+                            <tr>
+                                <td>idLock SafeDesktop - Safety for online banking and shopping transactions</td>
+                            </tr>
+                            <tr>
+                                <td>Safe browser for accessing websites</td>
+                                <td style="text-align:center"><i class="fa fa-check"></i></td>
+                                <td style="text-align:center"><i class="fa fa-check"></i></td>
+                                <td style="text-align:center"><i class="fa fa-check"></i></td>
+                            </tr>
+                            <tr>
+                                <td>Number of Desktops Covered</td>
+                                <td style="text-align:center">1</td>
+                                <td style="text-align:center">3</td>
+                                <td style="text-align:center">6</td>
+                            </tr>
+                            <tr>
+                                <td>Number of people covered</td>
+                                <td style="text-align:center">1</td>
+                                <td style="text-align:center">1</td>
+                                <td style="text-align:center">2</td>
+                            </tr>
+                            <tr>
+                                <td>idLock Security Suite - Desktop antivirus (AV), firewall and anti-spyware</td>
+                            </tr>
+                            <tr>
+                                <td>Antivirus (AV), firewall and anti-spyware</td>
+                                <td style="text-align:center"><i class="fa fa-check"></i></td>
+                                <td style="text-align:center"><i class="fa fa-check"></i></td>
+                                <td style="text-align:center"><i class="fa fa-check"></i></td>
+                            </tr>
+                            <tr>
+                                <td>Parental controls</td>
+                                <td style="text-align:center"><i class="fa fa-times"></i></td>
+                                <td style="text-align:center"><i class="fa fa-check"></i></td>
+                                <td style="text-align:center"><i class="fa fa-check"></i></td>
+                            </tr>
+                            <tr>
+                                <td>Social media monitoring</td>
+                                <td style="text-align:center"><i class="fa fa-times"></i></td>
+                                <td style="text-align:center"><i class="fa fa-check"></i></td>
+                                <td style="text-align:center"><i class="fa fa-check"></i></td>
+                            </tr>
+                            <tr>
+                                <td>Number of Desktops Covered</td>
+                                <td style="text-align:center">1</td>
+                                <td style="text-align:center">3</td>
+                                <td style="text-align:center">6</td>
+                            </tr>
+                            <tr>
+                                <td>Number of people covered</td>
+                                <td style="text-align:center">1</td>
+                                <td style="text-align:center">1</td>
+                                <td style="text-align:center">2</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+                <!--<div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>-->
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="overviewmodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content" style= width="900px" ;>
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">Overview</h4>
+                </div>
+                <div class="modal-body">
+                    <p>You wouldn't leave your car unlocked or your front door open while you went out for the day, as such recklessness would significantly increase the risk of theft. Surprisingly, although most Australians would recognise the sense in ensuring that their material possessions are protected against unauthorised entry, many do not take similar precautions in order to secure their virtual information. This oversight results in around 20% of people being a victim of some form of identity theft each year.</p>
+
+                    <p>These days it's not just credit card details that can be used fraudulently: bank details, passport information, social security identification, driving licence data and even your email address can all be misappropriated by skilled identity fraudsters and used in illegal activity. The information may also be sold on, allowing other criminals to use it for their own benefit. Not only can victims end up having their bank accounts emptied and their credit cards used for illegitimate purposes, they may also find that their passport details are being used by someone else, their driving information has been used to construct a false licence and someone else is using their social security data to work illegally or claim benefits to which they're not entitled.</p>
+
+                    <p>Unfortunately without the right security measures, anyone can be open to identity theft; you don't have to use a credit card or undertake some other form of online transaction in order to be at risk. If your private information is stored anywhere at all, there is potential for it to be stolen and used inappropriately. To combat this worrying threat, a growing number of people are turning to us for help. As a high calibre identity theft protection agency, we provide a range of measures which are proven to significantly reduce the risk of identity theft. Our skilled identity theft protection team will also put in place measures to swiftly detect if a breach has occurred and set in motion effective remediation measures to reduce the potential damage.</p>
+
+                    <p>Our comprehensive identity theft prevention package includes a premium internet security suite, a high security desktop, a “watch and alert” service, insurance and remediation. We provide a holistic identity theft solution that gives all our clients the assurance they need that their information is appropriately protected. For a cost-effective way of protecting you and your family against identity theft criminals, contact us now.</p>
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="whatmodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content" style="width:900px" ;>
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">What is Identity Theft Protection</h4>
+                </div>
+                <div class="modal-body">
+                    <h3>
+                        Overview Summary
+                    </h3>
+                    <p>Identity theft protection presents a number of challenges: one of the most complex problems is the variety of different ways in which data can be stolen. From significant breaches in the security systems of major data handling organisations to inadvertently responding to a “phishing” email, there are numerous methods that unscrupulous virtual criminals use to get hold of your personal information. Combating their tactics requires a multi-faceted approach which both minimises the risk of your valuable data being taken and also includes a rapid, effective system for reclaiming anything which does go astray.</p>
+
+                    <h3>
+                        Protection at every stage
+                    </h3>
+                    <p>Identity theft protection involves taking action to secure your data at every stage. It also includes practical, real life measures you can adopt to reduce risk as well as ensuring that your virtual transactions and virtual data storage is as secure as possible. Monitoring your personal information use is always essential, so that any untoward activity can be swiftly identified and investigated. By carrying out continual information sweeps on how your information is being used, it becomes easier to spot suspicious activities. On-going monitoring and security are the hallmarks of effective identity theft protection.</p>
+
+                    <h3> Rapid, effective response</h3>
+                    <p>When an incident occurs, for example your purse containing cards and a driving licence is stolen, prompt implementation of protective measures minimise the risk of the data being used fraudulently. Should the worst happen and the information is passed onwards, identity theft protection includes remedial action to limit the amount of damage caused. Insurance is included as part of an identity theft package, enabling people who've been a victim of theft to make a claim for any losses they have incurred as a result.</p>
+
+                    <h3>Security for you and your family</h3>
+                    <p>Identity theft protection can be extended to cover transactions on any device, as well as include regular searches to make sure your personal information isn't being used illicitly. This ensures that even if you're not aware that your security has been compromised, you can be confident that protracted misuse of your details will be quickly discovered and resolved. If you're keen to enable the people you care about to go about their daily lives confident that their personal information isn't being used illegally, identity theft protection is essential. Contact us now to find out how to safeguard your family in a cost-effective manner.</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="howmodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content" style="width:900px" ;>
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">How we protect you</h4>
+                </div>
+                <div class="modal-body">
+                    <h3>Overview Summary</h3>
+                    <p>Our identity theft protection package includes everything you need for comprehensive coverage. We offer five main elements of protection: a secure desktop; an advanced security suite; a “watch and alert” facility; insurance and remediation. When used together, we find that these measures provide strong, reliable protection against a wide range of data theft threats. Online hackers, pickpockets and cash card fraudsters can all be consistently thwarted with these operations. Cover starts rapidly after sign up, so there's no need to wait weeks before you and those you care about can start enjoying the benefits identity theft protection can bring.</p>
+
+                    <h3>We're on your side</h3>
+                    <p>We understand how traumatic it can be to realise that you've been the victim of identity theft. Without appropriate protection, sometimes people don't even know that a theft has taken place until they receive a credit card statement or get notice of a driving offence they definitely didn't commit. Many victims feel violated and extremely frightened by the experience. When you sign up with us, we continuously monitor your credit card activity, email use, passport number, social security number and more. If we notice that something unusual is going on, we'll contact you immediately so that any potential problem can be resolved rapidly. Pro-active management of a breach puts you in control, enabling you to swiftly deal with the situation.</p>
+
+                    <h3>Remediation</h3>
+                    <p>Should you be the victim of identity theft, we can work with you to undo the damage which has been caused. Not only will insurance usually cover any financial losses you have incurred, our skilled team can also work to resolve any issues which have come about as a result of fraudulent activity. For example, if your credit rating has been adversely affected by unauthorised use of your bank details or credit cards, we can work with the relevant agencies to restore it back to its usual condition.</p>
+
+                    <h3>Enjoy safe online access</h3>
+                    <p>Many people find that once they've put in place the security measures we provide, they feel far more confident about benefiting from activities such as online shopping or virtual banking. Once you've got our security suite in place, you can undertake a wide range of activities with the peace of mind that your valuable data is properly protected. If you want to enable everybody in your family to enjoy the advantages which online activities can bring without the worry of identity theft, we're here to help.</p>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="idsafeexperiencemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content" style="width:900px" ;>
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">The idSafe experience</h4>
+                </div>
+                <div class="modal-body">
+                    <h3>A flexible service to meet your needs</h3>
+                    <p>We understand that everybody is slightly different and vary the level of cover we offer accordingly. Some people will only need a few basic services to provide them with the right level of protection, whereas others require the security of a more advanced package with a larger number of benefits. Our aim is for you to control exactly what you need to meet your requirements, providing customised solutions for all our clients. Signing up for our premium service is swift and convenient, with cover starting shortly after registration.</p>
+
+                    <h3>Individual user account and valuable additional information</h3>
+                    <p>Once you've signed up with us, we provide a wealth of additional assistance to help keep you and your family safe. When you log into your account, you'll find details of your security record to date, as well as a wealth of tips, tricks and practical actions you can take in order to reduce the risk of becoming an identity theft victim. You'll also find updates on current scams, rogue software and other threats – forewarned is forearmed, so this data is always useful when it comes to staying safe.</p>
+
+                    <h3>Notification as you want it</h3>
+                    <p>If we spot activity which we believe to be suspicious, we want to let you know as quickly as possible. You can choose whether you wish to receive our alerts by email, phone or text, picking a medium that suits you best. Specifying your chosen media is also a security measure in itself, as unsolicited messages through a device you haven't approved for use could indicate that your security has been compromised in some way.</p>
+
+                    <h3>When things go wrong, the experts are already dealing with it</h3>
+                    <p>Receiving an alert that your information has potentially been tampered with or otherwise misused can be frightening, so it's good to know that by the time you've received notification that something may be wrong, our skilled, experienced team are already working on resolving the issue. They will check that your information hasn't been sold on, minimise the risk of further breaches and work to neutralise the value of the information, rendering it worthless to criminals. No matter what's happened to your data, we can sort it out and minimise the negative impact it has on your life. Adaptable, rapid, comprehensive and friendly identity theft protection is only a few clicks away – sign up now to start enjoying the benefits it brings.</p>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="securedesktopmodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content" style="width:900px" ;>
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">SafeDesktop</h4>
+                </div>
+                <div class="modal-body">
+                    <h3>Overview Summary</h3>
+                    <p>SafeDesktop endpoint security solutions render malware inoperable. Using containerisation and hardening with patented security technologies, online activity is isolated from targeted threats. As a result, online shopping and banking transactions can be done without risk of triggering malware or exposing private information to deviants.</p>
+
+                    <p>Even in the worst-case scenarios, when malware is already on the endpoint device, SafeDesktop protects credentials, login information and any personal or financial data-in-use at the deepest layer during the active online session.</p>
+
+                    <p>SafeDesktop provides a pristine Windows desktop environment for online shopping and banking transactions and communications that barricades sensitive data-in-use from malware.</p>
+
+                    <p>SafeDesktop adds depth to defences and is complementary to other security offerings such as AV, firewall and encryption. SafeDesktophas received consecutive certifications for effectiveness in online banking malware prevention from leading internet security research organisation, MRG Effitas.</p>
+
+                    <h3>Advance Protection for Online Transactions</h3>
+                    <p>SafeDesktop goes deep. Instead of the traditional industry paradigm of malware filtering, we go deeper to complement rather than replace current security solutions. SafeDesktop is secure by design to protect sensitive data during online transactions. No matter what.</p>
+
+                    <p>idSafe SafeDesktop game-changing prevention model blocks malware more effectively and faster than any other solution available today – anywhere in the world.</p>
+
+                    <h3>Antivirus Software (AV) isn’t enough</h3>
+                    <p>SafeDesktop keeps online banking and shopping transactions safe from thieves who try to steal identities, or drain bank accounts. Today, antivirus software alone won’t stop them in time. A desktop or mobile device could be infected without the owner knowing it. SafeDesktop stops criminals before they can gain access to transactions containing personal data, passcodes, or account numbers.</p>
+
+                    <p>SafeDesktop for a safe desktop and browsing for accessing websites that require exchange of personal or financial information. idSafe products work alongside existing firewall or antivirus software to protect transactions against even the latest threats such as keyloggers, botnets, trojans and account takeover (ATO) malware.</p>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="securitysuitemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content" style="width:900px" ;>
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">Security Suite (AV – Antivirus Protection)</h4>
+                </div>
+                <div class="modal-body">
+                    <h3> Overview Summary</h3>
+                    <p>Security Suite has been developed from the ground up and uses a proprietary combination of multiple antimalware components to provide fast, effective on access as well as on demand protection from a single Antimalware engine. The security suite includes a firewall and comprehensive network intrusion detection.</p>
+                    <p>
+                        <ul style="list-style:disc;font-size:0.875em;">
+                            <li>Desktop and Mobile Protection: any device, any platform – phone, tablet, PC, Mac, Android</li>
+                            <li>Lightweight, easy to install, and protects user privacy</li>
+                            <li>Scored top right in Virus Bulletin VB100 RAP Quadrant December 2013 and August 2014 for reactive and proactive detection</li>
+                        </ul>
+                    </p>
+
+                    <h3> Standard Features</h3>
+                    <p>
+                        <ul style="list-style:disc;font-size:0.875em;">
+                            <li>Keylogging</li>
+                            <li>Screen stealing</li>
+                            <li>DNS compromise and redirection</li>
+                            <li>SSL hijacking</li>
+                            <li>HTML form spying</li>
+                            <li>Password theft</li>
+                            <li>Cookie stealing</li>
+                            <li>Vulnerability exploitation</li>
+                            <li>Man-in-the-browser, man-in-the-middle and zero-day malware</li>
+                        </ul>
+                    </p>
+
+                    <h3>Additional Premium Features</h3>
+                    <p>
+                        <ul style="list-style:disc;font-size:0.875em;">
+                            <li>Child and Family Protection</li>
+                            <li>Social Media Monitoring</li>
+                            <li>Social Network Safety for enhanced family safety online</li>
+                            <li>Parental controls</li>
+                            <li>Privacy controls</li>
+                            <li>Anti-bullying protection</li>
+
+                        </ul>
+                    </p>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="watchalertmodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content" style="width:900px" ;>
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">Watch & Alert</h4>
+                </div>
+                <div class="modal-body">
+                    <h3>Overview Summary</h3>
+                    <p>Detect compromised personal information sooner, no matter where it occurs through Watch & alert internet surveillance technology.</p>
+
+                    <p>Do you know how your personal information is being used right now? If you don't, chances are your customers won't either, which is why watch & alert is such an important service to offer them. Without appropriate identity theft protection, many victims don't realise their information has been used illegally for some days or even weeks. Once stolen, it's common for personal information to be sold on via illegal online sites, enabling it to be used for anything from fake identification documents to credit card scams or other forms of criminal activity. Watch & alert provides a dependable answer to this problem, enabling personal information to be quickly recovered should theft take place.</p>
+
+                    <h3>Checking millions of data points to keep your customers safe</h3>
+                    <p>We use advanced technology to scan the sites and data points where stolen information is most likely to turn up. In addition to scanning for relevant credit card details and banking data, we can also check for other personally identifiable information (PII) which may have been taken, neutralising its value before it can be used for further illegal activity. Particularly where a person has used one password or username to protect a variety of sensitive online information, prompt detection of inappropriate use is essential in order to prevent hackers accessing all the other sites which the compromised password guards entry to.</p>
+
+                    <h3>Global response to compromised data</h3>
+                    <p>Watch & alert uses cutting-edge technology that's capable of accessing those areas of the net which are most likely to be markets for illegally obtained personal details. Our systems are capable of a global reach, searching internationally to check that our clients' information isn't being bought and sold. Different languages are no barrier to watch & alert, which undertakes advanced surveillance wherever it's needed.</p>
+
+                    <h3>Continuous monitoring for peace of mind</h3>
+                    <p>We undertake continual surveillance to ensure that, no matter what time of day or night personal information from one of our clients shows up where it shouldn't, we can deal with the matter rapidly. By the time a customer receives the alert that their private information has been obtained illegally, in many cases we will already have acted to prevent the situation from escalating. Contact us now for further information.</p>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="insurancemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content" style="width:900px" ;>
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">Insurance</h4>
+                </div>
+                <div class="modal-body">
+                    <h3>Overview Summary</h3>
+                    <p>Having your ID stolen is a traumatic event for anyone. At least in Australia any money stolen from your personal accounts or credit cards is able to be recovered from your bank or financial institution. This doesn’t help though if someone has done something other than stolen your money – things like using your identity to run up debts or steal someone else’s property. This could require you to appoint professionals to help you put things right.</p>
+
+                    <p>idSafe Insurance pays for these costs to put your affairs back in order.</p>
+
+                    <h3>Insurance Benefits include:</h3>
+                    <p>
+                        <ul style="list-style:disc;font-size:0.875em;">
+                            <li>Professional Services Expenses – covered for up to $1 Million in any 12 Month period for services including but not limited to legal expenses, forensic information technology services, forensic account services, court costs.</li>
+                            <li>Personal Direct Expenses – covered for up to $50,000 in any 12 Month period for services including but not limited to reasonable travel and accommodation expenses, payment of fees for registration or re-issuing of essential documents.</li>
+                            <li>Urgent Action Expenses – covered for up to $5,000 in any 12 Months period when necessary to engage a professional immediately to limit any potential losses from an Identity Theft.</li>
+                            <li>Full details of the Insurance coverage provided by idSafe are contained in the <a href="/Documents/idSafe Identity Theft Expenses Protection Insurance - Product Disclosure Statement (PDS).pdf" target="_blank">Insurance Product Disclosure Statement (PDS)</a>.</li>
+                        </ul>
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="remediationmodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content" style="width:900px" ;>
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">Remediation</h4>
+                </div>
+                <div class="modal-body">
+                    <h3>Overview Summary</h3>
+                    <p>24 hours a day, 7 days a week, our idSafe staff are ready to assist you with fraud resolution, no matter what type or how you experience identity theft. Our staff are experienced and will help to resolve your case whether it is simple or complex.</p>
+
+                    <p>
+                        <ul style="list-style:disc;font-size:0.875em;">
+                            <li>Dependable support 24/7</li>
+                            <li>Bilingual operators</li>
+                            <li>Telephone, Chat & Email</li>
+                        </ul>
+                    </p>
+
+
+                    <h3>Remediation – expert care when it's needed</h3>
+                    <p>Most people who discover that they've been the victim of identity theft naturally feel violated and frightened. They may also be extremely worried about the possible consequences of the theft and extremely unsure how best to resolve the situation. We understand just how difficult it can be for victims to deal effectively and correctly with identity theft, which is why our highly trained and experienced team is always on hand to help. Our expert customer care staff are available all day, every day, ready to respond to any problems which users might face.</p>
+
+                    <h3>We offer comprehensive, step-by-step information</h3>
+                    <p>In addition to providing highly detailed self help for our users, we also offer the services of a dedicated restoration expert, who can offer high grade specialist advice on credit related identity theft issues. They are able to talk through the correct procedures with customers, ensuring that nobody is left to flounder without the support they need. A third tier of support is also available, where customers receive tailored advice on identity theft remediation in cases where credit hasn't been compromised. These graded support services ensure that every user gets an appropriate service which gives them the help required to deal with their situation effectively.</p>
+
+                    <h3>Range of mediums and excellent access</h3>
+                    <p>In addition to operating twenty-four-hours a day, seven days a week, we also offer a number of different ways for users to get in touch: customers can contact us on the phone, chat or email. No matter how or when they communicate, we'll provide exemplary assistance and excellent customer care. Services are available in several different languages and our service is designed to be accessible to disabled users.</p>
+
+                    <h3>We also offer identity theft insurance</h3>
+                    <p>Although credit card providers will usually waive the cost of any purchases which were completed through identity costs, there are other situations where monies have been spent where remuneration may not be forthcoming. Our insurance allows every user to reclaim monies lost due to illegal activity, with no excess to be paid. Whether it's a general customer care query, advice regarding a credit disagreement or an identity theft matter, you can be confident that our skilled, professional team will be able to help. Get in touch to learn more about the benefits our high-calibre advisers can bring to your identity theft protection service.</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+   <!-- EOF Modals-->
+
+    <script>
+
+        $(document).ready(function () {
+            if ('none' == "normal") {
+
+                $("#lbForceSubscriptionAnchor").click();
+            }
+            else if ('none' == "checkout") {
+
+                $("#lbForceSubscriptionCheckoutAnchor").click()
+            }
+
+            //bsayej:temporarily remove the login link
+            //$("a[href$='/login']").attr('href', '#');
+            //$("a[href$='/cart']").attr('href', '#');
+        });
+
+
+    </script>
+
+   
+
+
+    <!--Footer-->
+    <footer id="footer" style="background-color :#ffffff">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-4 col-sm-8 col-md-8 col-lg-8">
+                    <p class="copy"> &copy; 2017 Wontok Enterprises Pty Ltd. All rights reserved.</p>
+                </div>
+                <div class="col-xs-8 col-sm-4 col-md-4 col-lg-4 text-right">
+                    <p style="font-size:0.75em;font-weight:600;"></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!--Global JS-->
+    <script src="/Content/frontend/assets/js/vendor/jquery-1.11.1.min.js"></script>
+    <script src="/Content/frontend/assets/js/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/Content/frontend/assets/js/plugins/nav/jquery.nav.js"></script>
+    <script src="/Content/frontend/assets/js/plugins/sticky/jquery.sticky.js"></script>
+    <script src="/Content/frontend/assets/js/plugins/scrollTo/jquery.scrollTo.js"></script>
+    <script src="/Content/frontend/assets/js/plugins/wow/wow.min.js"></script>
+    <script src="/Content/frontend/assets/js/plugins/parallax/jquery.parallax-1.1.3.js"></script>
+    <script src="/Content/frontend/assets/js/plugins/carousel/owl.carousel.js"></script>
+    <script src="/Content/frontend/assets/js/src/app.js"></script>
+    <script src="/Scripts/public.common.js"></script>
+
+
+    <a data-backdrop="static" data-keyboard="false" class="" data-toggle="modal" id="lbForceSubscriptionAnchor" href="#" data-target="#lbForceSubscription">
+    </a>
+
+    <a data-backdrop="static" data-keyboard="false" class="" data-toggle="modal" id="lbForceSubscriptionCheckoutAnchor" href="#" data-target="#lbForceSubscriptionCheckout">
+    </a>
+
+    <div class="modal fade" id="lbForceSubscription" tabindex="-1" role="dialog" aria-labelledby="lbForceSubscriptionLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="lbForceSubscriptionLabel">Continue Checkout</h4>
+                </div>
+                <div class="modal-body">
+
+                    We note that you have created a Wontok ONE account, but did not get a chance to select an Wontok ONE subscription and checkout.
+                    Click below to view our pricing plans and finalise your Order.
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Not Now</button>
+                    <button type="button" data-dismiss="modal" onclick="javascript: window.location = '/#pricing';" class="btn btn-primary">View Subscriptions</button>
+                </div>
+                
+
+            </div> <!-- /.modal-content -->
+        </div> <!-- /.modal-dialog -->
+    </div>
+
+
+    <div class="modal fade" id="lbForceSubscriptionCheckout" tabindex="-1" role="dialog" aria-labelledby="lbForceSubscriptionCheckoutLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="lbForceSubscriptionCheckoutLabel">Continue Checkout</h4>
+                </div>
+                <div class="modal-body">
+
+                    We note that you have created a Wontok ONE account, but did not get a chance to complete the checkout process.
+                    Click below to finalise your Order.
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Not Now</button>
+                    <button type="button" onclick="javascript: window.location = '/onepagecheckout';" class="btn btn-primary">View Checkout</button>
+                </div>
+                
+
+            </div> <!-- /.modal-content -->
+        </div> <!-- /.modal-dialog -->
+    </div> 
+
+
+<!-- Visual Studio Browser Link -->
+<script type="application/json" id="__browserLink_initializationData">
+    {"appName":"Safari","requestId":"aab07aecc6484997ac1c7974194cc478"}
+</script>
+<script type="text/javascript" src="https://localhost:44399/55958627e2cf4b909438d997b08089a7/browserLink" async="async"></script>
+<!-- End Browser Link -->
+
+</body>
+
+</html>
