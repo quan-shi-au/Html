@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style type="text/css">
+
+        .has-feedback {
+        position: relative;
+        }
+
+        .has-feedback .form-control {
+        padding-right: 42.5px;
+        }
+
+        .form-control-feedback {
+          position: absolute;
+          top: 0;
+          right: 0;
+          z-index: 2;
+          display: block;
+          width: 34px;
+          height: 34px;
+          line-height: 34px;
+          text-align: center;
+          pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="has-feedback">
+        <div class="form-control">
+                <input type="text" style="width:100%;"/>
+                <i class="fa fa-check form-control-feedback" style="color:green; right:100px;"></i>
+        </div>
+    </div>
+
+
+    <div style="position:relative;width:30%;margin-left:50px;">
+        <input type="text" style="margin-top:20px;width:100%"/>
+        <i class="fa fa-check" style="position:absolute;margin-top:20px;top:0px;right:0px;"></i>
+    </div>
+
+</body>
+</html>
