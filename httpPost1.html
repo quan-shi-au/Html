@@ -1,0 +1,51 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>jQuery.post demo</title>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+<body>
+
+    <form action="/" id="searchForm">
+        <input type="submit" value="Just click to send http request">
+    </form>
+
+    <script>
+        $("#searchForm").submit(function (event) {
+
+            event.preventDefault();
+
+            var data = { "un": "tim.parker5@wontok.com", "pw": "Abc@123" };
+
+            var callbackSuccess = function (data) {
+                debugger;
+
+                alert('success');
+
+            }
+
+            var callbackError = function (data) {
+                debugger;
+
+                alert('error');
+            }
+
+            jQuery.ajax({
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                'type': 'POST',
+                'url': "http://52.0.39.249/api/v1/token/get",
+                'data': JSON.stringify(data),
+                'dataType': 'json',
+                'success': callbackSuccess,
+                'error': callbackError,
+            });
+
+        });
+    </script>
+
+</body>
+</html>
