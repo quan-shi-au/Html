@@ -1,0 +1,49 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>jQuery.post demo</title>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+<body>
+
+    <form action="/" id="searchForm">
+        <input type="submit" value="Just click to send http request">
+    </form>
+
+    <script>
+        $("#searchForm").submit(function (event) {
+
+            event.preventDefault();
+
+            var callbackSuccess = function (data) {
+                debugger;
+
+                alert('success');
+
+            }
+
+            var callbackError = function (data) {
+                debugger;
+
+                alert('error');
+            }
+
+            jQuery.ajax({
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json',
+                    'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoidGltLnBhcmtlcjVAd29udG9rLmNvbSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6ImFkbWluIiwibmJmIjoiMTUxNTk3MjkzNyIsImV4cCI6IjE1MTYwNTkzMzcifQ.Y78KH0ZHKKEAZ8qRkXkS_Ua1pWnSdGN4u_Djno9TA0g'
+                },
+                'type': 'GET',
+                'url': "http://52.0.39.249/api/v1/sub/fetch",
+                'dataType': 'json',
+                'success': callbackSuccess,
+                'error': callbackError,
+            });
+
+        });
+    </script>
+
+</body>
+</html>
