@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Html", ".", "{D9AEB306-B5D5-49E3-A48A-8B3D919CF0C4}"
 	ProjectSection(WebsiteProperties) = preProject
@@ -24,6 +24,12 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Html", ".", "{D9AEB306-B5D5
 		SlnRelativePath = "..\Html\"
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{464C32C1-94EB-4112-BF5C-FC9648943ED2}"
+	ProjectSection(SolutionItems) = preProject
+		DropDown1.html = DropDown1.html
+		DropDown2.html = DropDown2.html
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -34,5 +40,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1C9185DA-66D2-4685-9027-874B5554C35C}
 	EndGlobalSection
 EndGlobal
