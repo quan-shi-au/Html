@@ -1,0 +1,30 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>jQuery validation plug-in - main demo</title>
+    <!--<link href="style/ValidationStyle.css" rel="stylesheet" />-->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.min.js"></script>
+
+    <script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/aes.js"></script>
+    <script>
+        var string = 'Lorem ipsum dolor sit amet, ...';
+        var password = 'my-password';
+        var encrypted = CryptoJS.AES.encrypt(string, password);
+        console.log(encrypted.toString());
+        // will output something like:
+        // U2FsdGVkX1/l/LqNSCQixd0iPv4neKAGZvbQDbYUovZE4OcM7l3ULNDgkZQmrweN
+        var decrypted = CryptoJS.AES.decrypt(encrypted, password);
+        console.log(decrypted.toString(CryptoJS.enc.Utf8));
+        // Lorem ipsum dolor sit amet, ...
+    </script>
+
+</head>
+<body>
+    <div>Encrypted</div>
+    <div id="encrypted"></div>
+    <div id="decrypted"></div>
+</body>
+</html>
