@@ -7,11 +7,7 @@
     var mykey = "Nw4nkaiRfSgpCqPrjO/FR7z1IU79wgSOufbuXWND2SM=";
 
     var iv = CryptoJS.enc.Base64.parse(myVector);
-    var encrypted = CryptoJS.enc.Base64.parse(myEncrypted);
     var key = CryptoJS.enc.Base64.parse(mykey);
-
-    var utf8Iv = iv.toString(CryptoJS.enc.Utf16);
-    var utf8Key = key.toString(CryptoJS.enc.Utf16);
 
     var decrypted = CryptoJS.AES.decrypt(myEncrypted, key, {
         iv: iv,
