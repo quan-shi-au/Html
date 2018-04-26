@@ -73,7 +73,7 @@
             });
 
             $('#btLogin').click(function () {
-                $.post("http://52.0.39.249/api/v1/token/get", $.param({ "un": "tim.parker5@wontok.com", "pw": "Abc@123" }))
+                $.post("http://localhost:896/auth/gettoken", $.param({ "Username": "sam.w9@wontokmail.com", "Password": "Abc123" }))
                     .done(
 
                     function (token) {

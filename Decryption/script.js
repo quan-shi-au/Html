@@ -8,14 +8,14 @@ var password = "Secret Password";
 
 
 function encrypt(msg, pass) {
-    var salt = CryptoJS.lib.WordArray.random(128 / 8);
 
-    var key = CryptoJS.PBKDF2(pass, salt, {
-        keySize: keySize / 32,
-        iterations: iterations
-    });
+    debugger;
 
-    var iv = CryptoJS.lib.WordArray.random(128 / 8);
+    var myVector = "eHh4eHh4eHh4eHh4eHh4eA==";
+    var mykey = "YWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWE=";
+
+    var iv = CryptoJS.enc.Base64.parse(myVector);
+    var key = CryptoJS.enc.Base64.parse(mykey);
 
     var encrypted = CryptoJS.AES.encrypt(msg, key, {
         iv: iv,
@@ -24,21 +24,26 @@ function encrypt(msg, pass) {
 
     });
 
-    // salt, iv will be hex 32 in length
-    // append them to the ciphertext for use  in decryption
-    var transitmessage = salt.toString() + iv.toString() + encrypted.toString();
+    var transitmessage = CryptoJS.enc.Base64.stringify(encrypted);
+
     return transitmessage;
 }
 
 function decrypt(transitmessage, pass) {
-    var salt = CryptoJS.enc.Hex.parse(transitmessage.substr(0, 32));
-    var iv = CryptoJS.enc.Hex.parse(transitmessage.substr(32, 32))
-    var encrypted = transitmessage.substring(64);
 
-    var key = CryptoJS.PBKDF2(pass, salt, {
-        keySize: keySize / 32,
-        iterations: iterations
-    });
+    debugger;
+
+    var myVector = "eHh4eHh4eHh4eHh4eHh4eA==";
+    var myEncrypted = "SwoVcHXoVAi0kQaDoX714A==";
+    var mykey = "YWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWE=";
+
+    var iv = CryptoJS.enc.Base64.parse(myVector);
+    var encrypted = CryptoJS.enc.Base64.parse(myEncrypted);
+    var key = CryptoJS.enc.Base64.parse(mykey);
+
+    var utf8Iv = iv.toString(CryptoJS.enc.Utf8);
+    //var utf8Encrypted = encrypted.toString(CryptoJS.enc.Utf8);
+    var utf8Key = key.toString(CryptoJS.enc.Utf8);
 
     var decrypted = CryptoJS.AES.decrypt(encrypted, key, {
         iv: iv,
@@ -46,10 +51,13 @@ function decrypt(transitmessage, pass) {
         mode: CryptoJS.mode.CBC
 
     })
+
+    var decryptedString = decrypted.toString(CryptoJS.enc.Utf8);
+
     return decrypted;
 }
 
-var encrypted = encrypt(message, password);
+var encrypted = encrypt("sam6547", password);
 var decrypted = decrypt(encrypted, password);
 
 $('#encrypted').text("Encrypted: " + encrypted);

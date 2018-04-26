@@ -16,7 +16,7 @@
 
             event.preventDefault();
 
-            var data = { "un": "tim.parker5@wontok.com", "pw": "Abc@123" };
+            var data = { "Username": "sam.w9@wontokmail.com", "ProductIdentifier": "4" };
 
             var callbackSuccess = function (data) {
                 debugger;
@@ -34,10 +34,11 @@
             jQuery.ajax({
                 headers: {
                     'Accept': 'application/json',
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/json',
+                    'Authorization': 'bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoic2FtLnc5QHdvbnRva21haWwuY29tIiwibmJmIjoiMTUyNDU0MzU0NCIsImV4cCI6IjE1MjQ1NDcxNDQifQ.PFRNsT4P49860L8E8C5Qs-dA8qIRFsHQnDwNgxNeHUE'
                 },
                 'type': 'POST',
-                'url': "http://52.0.39.249/api/v1/token/get",
+                'url': "http://localhost:896/licence/get",
                 'data': JSON.stringify(data),
                 'dataType': 'json',
                 'success': callbackSuccess,
