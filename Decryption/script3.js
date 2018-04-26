@@ -37,36 +37,6 @@ function decrypt(transitmessage, pass) {
 
     debugger;
 
-    var myVector = "Iik3NlhqOYGb5nqdJQqtAw==";
-    var myEncrypted = "b6vPQPKTl9BCSDuIt5S4DQ==";
-    var mykey = "Nw4nkaiRfSgpCqPrjO/FR7z1IU79wgSOufbuXWND2SM=";
-
-    var iv = CryptoJS.enc.Base64.parse(myVector);
-    var encrypted = CryptoJS.enc.Base64.parse(myEncrypted);
-    var key = CryptoJS.enc.Base64.parse(mykey);
-
-    var utf8Iv = iv.toString(CryptoJS.enc.Utf16);
-    //var utf8Encrypted = encrypted.toString(CryptoJS.enc.Utf8);
-    var utf8Key = key.toString(CryptoJS.enc.Utf16);
-
-    var decrypted = CryptoJS.AES.decrypt(myEncrypted, key, {
-        iv: iv,
-        padding: CryptoJS.pad.Pkcs7,
-        mode: CryptoJS.mode.CBC
-
-    })
-
-    var decryptedString = decrypted.toString(CryptoJS.enc.Utf8);
-
-    return decrypted;
-
-}
-
-
-function decrypt1(transitmessage, pass) {
-
-    debugger;
-
     var myVector = "eHh4eHh4eHh4eHh4eHh4eA==";
     var myEncrypted = "SwoVcHXoVAi0kQaDoX714A==";
     var mykey = "YWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWE=";
@@ -79,8 +49,8 @@ function decrypt1(transitmessage, pass) {
     //var utf8Encrypted = encrypted.toString(CryptoJS.enc.Utf8);
     var utf8Key = key.toString(CryptoJS.enc.Utf16);
 
-    var decrypted = CryptoJS.AES.decrypt(myEncrypted, key, {
-        iv: iv,
+    var decrypted = CryptoJS.AES.decrypt(encrypted, utf8Key, {
+        iv: utf8Iv,
         padding: CryptoJS.pad.Pkcs7,
         mode: CryptoJS.mode.CBC
 
