@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+            integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+            crossorigin="anonymous"></script>
+
+    <script src="aes.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/pbkdf2.js"></script>
+    <script src="core.js"></script>
+    <script src="enc-base64-min.js"></script>
+
+</head>
+<body>
+    <h1>CryptoJs AES Encryption/Decryption</h1>
+    <div id="encrypted"></div>
+    <div id="decrypted"></div>
+
+
+    <script>
+
+        var myVector = "RqVfW5hf8ozW3gptrA9O5g==";
+        var mykey = "atWOyZhAOZE80PNhDHvCRqowRriPVPnithBVJ0TnE7I=";
+
+        function initialize() {
+            var keySize = 256;
+            var ivSize = 128;
+            var iterations = 100;
+            var pass = "Secret Password";
+
+            debugger;
+
+            var salt = CryptoJS.lib.WordArray.random(128 / 8);
+
+            var key = CryptoJS.PBKDF2(pass, salt, {
+                keySize: keySize / 32,
+                iterations: iterations
+            });
+
+            var iv = CryptoJS.lib.WordArray.random(128 / 8);
+
+            myVector = iv.toString();
+            mykey = key.toString();
+
+        }
+
+        function decrypt(myEncrypted) {
+
+            debugger;
+
+            var iv = CryptoJS.enc.Base64.parse(myVector);
+            var key = CryptoJS.enc.Base64.parse(mykey);
+
+            var decrypted = CryptoJS.AES.decrypt(myEncrypted, key, {
+                iv: iv,
+                padding: CryptoJS.pad.Pkcs7,
+                mode: CryptoJS.mode.CBC
+
+            })
+
+            var decryptedString = decrypted.toString(CryptoJS.enc.Utf8);
+
+            return decryptedString;
+
+        }
+
+        function encrypt(msg, pass) {
+
+            debugger;
+
+            var iv = CryptoJS.enc.Base64.parse(myVector);
+            var key = CryptoJS.enc.Base64.parse(mykey);
+
+            var encrypted = CryptoJS.AES.encrypt(msg, key, {
+                iv: iv,
+                padding: CryptoJS.pad.Pkcs7,
+                mode: CryptoJS.mode.CBC
+
+            });
+
+            // encrypted.toString() converts to a base64 string
+            var encodedEncryptString = encrypted.toString();
+
+            return encodedEncryptString;
+        }
+
+        $(function () {
+
+            initialize();
+
+            var encrypted = encrypt('Love is all you need', 'mysecrt');
+            $('#encrypted').text("encrypted: " + encrypted);
+
+            var decrypted = decrypt(encrypted);
+            $('#decrypted').text("Decrypted: " + decrypted);
+
+
+        });
+
+    </script>
+</body>
+</html>

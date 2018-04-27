@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+            integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+            crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/pbkdf2.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/components/core.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/components/enc-base64-min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/hmac-sha256.js"></script>
+
+
+</head>
+<body>
+    <h1>CryptoJs AES Encryption/Decryption</h1>
+    <div id="encrypted"></div>
+    <div id="decrypted"></div>
+
+
+    <script>
+
+        var myVector = "Iik3NlhqOYGb5nqdJQqtAw==";
+        var mykey = "Nw4nkaiRfSgpCqPrjO/FR7z1IU79wgSOufbuXWND2SM=";
+
+        function decrypt(myEncrypted) {
+
+            debugger;
+
+            var iv = CryptoJS.enc.Base64.parse(myVector);
+            var key = CryptoJS.enc.Base64.parse(mykey);
+
+            var decrypted = CryptoJS.AES.decrypt(myEncrypted, key, {
+                iv: iv,
+                padding: CryptoJS.pad.Pkcs7,
+                mode: CryptoJS.mode.CBC
+
+            })
+
+            var decryptedString = decrypted.toString(CryptoJS.enc.Utf8);
+
+            return decryptedString;
+
+        }
+
+        function encrypt(msg, pass) {
+
+            debugger;
+
+            var iv = CryptoJS.enc.Base64.parse(myVector);
+            var key = CryptoJS.enc.Base64.parse(mykey);
+
+            var encrypted = CryptoJS.AES.encrypt(msg, key, {
+                iv: iv,
+                padding: CryptoJS.pad.Pkcs7,
+                mode: CryptoJS.mode.CBC
+
+            });
+
+            return encrypted.toString();
+        }
+
+        $(function () {
+
+            var encrypted = encrypt('Love is all you need', 'mysecrt');
+            $('#encrypted').text("encrypted: " + encrypted);
+
+            var decrypted = decrypt(encrypted);
+            $('#decrypted').text("Decrypted: " + decrypted);
+
+
+        });
+
+    </script>
+</body>
+</html>
