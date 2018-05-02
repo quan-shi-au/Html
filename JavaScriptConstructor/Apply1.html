@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+
+    <script>
+
+        function Person(name) {
+            this.name = name;
+        }
+
+        Person.prototype.sayHi = function () {
+            console.log('Hi, I am ' + this.name);
+        }
+
+        function sing() {
+            console.log(this.name + ' sings');
+        }
+
+        $(function () {
+
+            debugger;
+
+            let jack = new Person('Jack');
+            let jill = new Person('Jill');
+
+            jack.sayHi();
+            jill.sayHi();
+
+            sing.apply(jack);
+
+        });
+
+
+    </script>
+</body>
+</html>

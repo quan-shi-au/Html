@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+
+    <script>
+
+        // All JavaScript objects inherit properties and methods from a prototype.
+        function Mammal() {
+
+        }
+
+        Mammal.prototype.breathe = function () {
+            console.log('I breathe.');
+
+        }
+
+        function Cat() {
+
+        }
+
+        Cat.prototype = new Mammal();
+        Cat.prototype.constructor = Cat;
+
+
+
+        $(function () {
+
+            debugger;
+
+            var garfield = new Cat();
+            garfield.breathe();
+
+
+
+        });
+
+
+    </script>
+</body>
+</html>

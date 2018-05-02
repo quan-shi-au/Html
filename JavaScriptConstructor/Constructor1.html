@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+
+    <script>
+
+        // the new operator creates an instance of a user-defined object type or of one of the built-in object types that has a construcotr function.
+        function Person(name) {
+            this.name = name;
+        }
+
+        $(function () {
+
+            debugger;
+
+            var bob = new Person('Bob');
+
+            if (bob instanceof Person)
+                console.log('bob is instance of Person');
+            else
+                console.log('bob is not instance of Person');
+
+            console.log(bob.name);
+
+            if (this === window)
+                console.log('this is window');
+
+
+        });
+
+
+    </script>
+</body>
+</html>
