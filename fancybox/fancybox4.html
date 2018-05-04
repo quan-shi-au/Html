@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+
+    <script src="jquery-1.4.3.min.js"></script>
+
+    <link href="jquery.fancybox-1.3.4.css" rel="stylesheet" />
+    <script src="jquery.fancybox-1.3.4.js"></script>
+
+    <style>
+        #open {
+            display: none;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div id="right4" class="pics">
+        <img class="img-center" src="images/smart-agriculture1.png" width="168" height="168" alt="Akıllı Tarım" />
+        <ul class="solutions-ul">
+            <li lang="tr">
+                <i class="fa fa-caret-right"></i> Gübreleme
+            </li>
+            <li lang="tr">
+                <i class="fa fa-caret-right"></i> Şarap Kalite Artırılması
+            </li>
+            <li lang="tr">
+
+                <i class="fa fa-caret-right"></i> <a class="fancybox" rel="gallery4" href="big_image_2.jpg">Akıllı Tarım</a>
+            </li>
+        </ul>
+    </div>
+
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $(".fancybox").fancybox({
+                autoSize: true,
+                fitToView: true,
+
+
+            });
+
+            $("#right4").cycle({
+                fx: 'curtainX',
+                next: '#right',
+                timeout: 0,
+                easing: 'easeInOutBack'
+            });
+
+        });
+    </script>
+
+
+</body>
+</html>

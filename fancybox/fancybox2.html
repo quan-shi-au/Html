@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+
+    <script src="jquery-1.4.3.min.js"></script>
+
+    <link href="jquery.fancybox-1.3.4.css" rel="stylesheet" />
+    <script src="jquery.fancybox-1.3.4.js"></script>
+
+    <style>
+        #open {
+            display: none;
+        }
+    </style>
+
+</head>
+<body>
+
+    <button href="#open" class="o">Open</button>
+
+    <div id="open">
+        <button class="search" id="merge">Merge</button>
+        <button class="search" id="cancel">Cancel</button>
+    </div>
+
+    <a href="http://jsfiddle.net/user/login/" class="iframe">Click me to open a lightbox!</a>
+
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $(".o").fancybox({
+                //modal: true
+            });
+
+
+            $('#merge').click(function () {
+                $('#cancel').attr("disabled", "disabled");
+                console.log('submit');
+            });
+
+            $('#cancel').click(function () {
+                $.fancybox.close();
+            });
+
+
+            $(".iframe").fancybox({
+                type: 'iframe'
+            });
+
+        });
+    </script>
+
+
+</body>
+</html>
