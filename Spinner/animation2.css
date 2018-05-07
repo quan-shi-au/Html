@@ -1,81 +1,103 @@
-body{
-  
-  margin:90px auto;
-  width: 500px;
-   background-color: #e9eaed;
+body {
+    margin: 90px auto;
+    width: 500px;
+    background-color: #e9eaed;
 }
 
-.animationLoading{
-  background: #fff;
-  border: 1px solid;
-  border-color: #e5e6e9;
-  border-radius: 3px;	
-  display: block;
-  height: 324px;
-  width: 494px;
-  padding: 12px;
+.animationLoading {
+    background: #fff;
+    border: 1px solid;
+    border-color: #e5e6e9;
+    border-radius: 3px;
+    display: block;
+    height: 324px;
+    width: 494px;
+    padding: 12px;
 }
+
 @keyframes animate {
-     0% {
-	    background-position: -468px 0
-	  }
-	  100% {
-	    background-position: 468px 0
-	  }
+    0% {
+        background-position: -468px 0
+    }
 
+    100% {
+        background-position: 468px 0
+    }
 }
 
-#container{
-  width:100%;
-  height:30px;
-}
-#one,#two,#three,#four,#five,#six
-{
-  position:relative;
-  background-color: #CCC;
-  height: 6px;
-  animation-name: animate; 
-  animation-duration: 2s; 
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;	  
-  background: -webkit-gradient(linear, left top, right top, color-stop(8%, #eeeeee), color-stop(18%, #dddddd), color-stop(33%, #eeeeee));
-  background: -webkit-linear-gradient(left, #eeeeee 8%, #dddddd 18%, #eeeeee 33%);
-  background: linear-gradient(to right, #eeeeee 8%, #dddddd 18%, #eeeeee 33%);
-  -webkit-background-size: 800px 104px;  
+#container {
+    width: 100%;
+    height: 30px;
 }
 
-#one{  
-  left:0; 
-  height: 40px;
-  width: 40px;  
+#text1, #text2, #text3, #box1, #box2, #box3, #box4, #box5, #box6 {
+    position: relative;
+    background-color: #CCC;
+    height: 6px;
+    animation-name: animate;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    background: -webkit-gradient(linear, left top, right top, color-stop(8%, #eeeeee), color-stop(18%, #dddddd), color-stop(33%, #eeeeee));
+    background: -webkit-linear-gradient(left, #eeeeee 8%, #dddddd 18%, #eeeeee 33%);
+    background: linear-gradient(to right, #eeeeee 8%, #dddddd 18%, #eeeeee 33%);
+    -webkit-background-size: 800px 104px;
 }
 
-#two{
-  left:50px;
-  top:-33px;
-  width: 25%;
+#text1 {
+    left: 0px;
+    height: 20px;
+    width: 100%;
 }
 
-#Three{
-  left:50px;
-  top:-20px;
-  width: 15%;
+#text2 {
+    left: 0px;
+    height: 40px;
+    top: 5px;
+    width: 100%;
 }
 
-#four{
-  left:0px;
-  top:30px;
-  width: 80%;
+#text3 {
+    left: 0px;
+    height: 20px;
+    top: 10px;
+    width: 100%;
 }
 
-#five{
-  left:0px;
-  top:45px;
-  width: 90%;
+#box1 {
+    left: 0px;
+    height: 60px;
+    width: 60px;
+    top: 30px;
 }
 
-#six{
-  left:0px;
-  top:60px;
-  width: 50%;
+#box2 {
+    left: 60px;
+    height: 60px;
+    width: 60px;
+    top: 0px;
+}
+#box3 {
+    left: 60px;
+    height: 60px;
+    width: 60px;
+    top: 0px;
+}
+#box4 {
+    left: 60px;
+    height: 60px;
+    width: 60px;
+    top: 0px;
+}
+#box5 {
+    left: 60px;
+    height: 60px;
+    width: 60px;
+    top: 0px;
+}
+#box6 {
+    left: 60px;
+    height: 60px;
+    width: 60px;
+    top: 0px;
 }
