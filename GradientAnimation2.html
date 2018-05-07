@@ -9,17 +9,18 @@
         .my-gradient {
             height: 50px;
             width: 50%;
-
-            position: relative;
-            background-color: #CCC;
+            background: linear-gradient(to left, #333, #333 50%, #eee 75%, #333 75%);
+            /*background: linear-gradient(to right, blue, green);*/
+            /*background: linear-gradient(to left, #333, #333 50%, #eee 75%, #333 75%);*/
+            /*position: relative;
+            background-color: #CCC;*/
             animation-name: my-animate;
             animation-duration: 2s;
             animation-iteration-count: infinite;
             animation-timing-function: linear;
-            background: -webkit-gradient(linear, left top, right top, color-stop(8%, red), color-stop(18%, green), color-stop(33%, red)) !important;
+            /*background: -webkit-gradient(linear, left top, right top, color-stop(8%, red), color-stop(18%, green), color-stop(33%, red)) !important;
             background: -webkit-linear-gradient(left, red 8%, green 18%, red 33%) !important;
-            background: linear-gradient(to right, red 8%, green 18%, red 33%) !important;
-            -webkit-background-size: 800px 104px !important;
+            -webkit-background-size: 800px 104px !important;*/
         }
 
 
