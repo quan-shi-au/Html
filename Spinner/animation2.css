@@ -38,9 +38,9 @@ body {
     animation-duration: 2s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
-    background: -webkit-gradient(linear, left top, right top, color-stop(8%, #eeeeee), color-stop(18%, #dddddd), color-stop(33%, #eeeeee));
-    background: -webkit-linear-gradient(left, #eeeeee 8%, #dddddd 18%, #eeeeee 33%);
-    background: linear-gradient(to right, #eeeeee 8%, #dddddd 18%, #eeeeee 33%);
+    background: -webkit-gradient(linear, left top, right top, color-stop(8%, red), color-stop(18%, green), color-stop(33%, red));
+    background: -webkit-linear-gradient(left, red 8%, green 18%, red 33%);
+    background: linear-gradient(to right, red 8%, green 18%, red 33%);
     -webkit-background-size: 800px 104px;
 }
 
