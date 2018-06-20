@@ -1,0 +1,60 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>jQuery.post demo</title>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+<body>
+
+    <form action="/" id="searchForm">
+        <input type="submit" value="Just click to send http request">
+    </form>
+
+    <script>
+        $("#searchForm").submit(function (event) {
+
+            event.preventDefault();
+
+            var data = {
+                "Username": "sam.w9@wontokmail.com",
+                "Offerid": "3",
+                "OtherData": "other data",
+                "BrandId": "3410",
+                "OrderId": "1234-3334-1123-44400",
+                "PromotionalCode": "1234"
+
+            };
+
+            var callbackSuccess = function (data) {
+                debugger;
+
+                alert('success');
+
+            }
+
+            var callbackError = function (data) {
+                debugger;
+
+                alert('error');
+            }
+
+            jQuery.ajax({
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json',
+                    'Authorization': 'bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoic2FtLnc5QHdvbnRva21haWwuY29tIiwibmJmIjoiMTUyNDU0MzU0NCIsImV4cCI6IjE1MjQ1NDcxNDQifQ.PFRNsT4P49860L8E8C5Qs-dA8qIRFsHQnDwNgxNeHUE'
+                },
+                'type': 'POST',
+                'url': "http://localhost:44638/partner/activate",
+                'data': JSON.stringify(data),
+                'dataType': 'json',
+                'success': callbackSuccess,
+                'error': callbackError,
+            });
+
+        });
+    </script>
+
+</body>
+</html>

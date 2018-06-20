@@ -1,0 +1,54 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>jQuery.post demo</title>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+<body>
+
+    <form action="/" id="searchForm">
+        <input type="submit" value="Just click to send http request">
+    </form>
+
+    <script>
+        $("#searchForm").submit(function (event) {
+
+            event.preventDefault();
+
+            var data = {
+                "url": "http://www.hermesil.com/Library/Secure.management/"
+            };
+
+            var callbackSuccess = function (data) {
+                debugger;
+
+                alert('success');
+
+            }
+
+            var callbackError = function (data) {
+                debugger;
+
+                alert('error');
+            }
+
+            jQuery.ajax({
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json',
+                    'X-Nimbus-ClientId': '9AC2721D-DCBB-0911-7FC8AA98BDD0AC92'
+                },
+                'type': 'POST',
+                'url': "http://localhost:52772/inspect/website",
+                'data': JSON.stringify(data),
+                'dataType': 'json',
+                'success': callbackSuccess,
+                'error': callbackError,
+            });
+
+        });
+    </script>
+
+</body>
+</html>
