@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+    <script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+    <link href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css" rel="stylesheet" type="text/css" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>JS Bin</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:700,400,400italic,700italic,100" rel="stylesheet">
+
+    <style>
+        .class1 {
+            fill: purple;
+            color: purple;
+        }
+        .class2 {
+            fill: lightgreen;
+            color: lightgreen;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div class="ct-chart ct-golden-section"></div>
+    </div>
+
+    <script>
+
+        var newData = {
+            series:
+                [
+                    { value: 1, meta: { info: 'New 1', index: 0 }, className: "class1" },
+                    { value: 3, meta: { info: 'New 2', index: 1 } },
+                    { value: 5, meta: { info: 'New 3', index: 2 } },
+                    { value: 7, meta: { info: 'New 4', index: 3 } }
+                ]
+        };
+
+        var oldData = {
+            series:
+                [
+                    { value: 2, meta: { info: 'Old 1', index: 0 }, className: "class2" },
+                    { value: 4, meta: { info: 'Old 2', index: 1 } },
+                    { value: 6, meta: { info: 'Old 3', index: 2 } },
+                    { value: 8, meta: { info: 'Old 4', index: 3 } }
+                ]
+        };
+
+        var oldOptions = { height: '200px' };
+        var newOptions = { height: '300px' };
+
+        var myChart = new Chartist.Pie('.ct-chart', oldData, oldOptions);
+
+        $('.ct-chart').on('click', '.ct-slice-pie', function () {
+            var meta = Chartist.deserialize($(this).attr('ct:meta'));
+            console.log(meta);
+
+            myChart.update(newData, newOptions);
+        });
+
+    </script>
+
+
+</body>
+</html>
