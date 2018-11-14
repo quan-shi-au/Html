@@ -1,0 +1,156 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <style>
+        * {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+            width: 100%;
+        }
+
+        body {
+            font-family: sans-serif;
+            line-height: 1.4;
+        }
+
+        h1 {
+            font-size: 150%;
+        }
+
+        p {
+            margin-bottom: 10px;
+        }
+
+        .paddingBlock {
+            padding: 20px 0;
+        }
+
+        .eqWrap {
+            display: flex;
+        }
+
+        .eq {
+            padding: 10px;
+        }
+
+            .eq:nth-of-type(odd) {
+                background: yellow;
+            }
+
+            .eq:nth-of-type(even) {
+                background: lightblue;
+            }
+
+        .equalHW {
+            flex: 1;
+        }
+
+        .equalHMWrap {
+            justify-content: space-between;
+        }
+
+        .equalHM {
+            width: 32%;
+        }
+
+        .equalHMRWrap {
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .equalHMR {
+            width: 32%;
+            margin-bottom: 2%;
+        }
+
+        .equalHMVWrap {
+            flex-wrap: wrap;
+        }
+
+        .equalHMV {
+            width: 32%;
+            margin: 1%;
+        }
+
+            .equalHMV:nth-of-type(3n) {
+                margin-right: 0;
+            }
+
+            .equalHMV:nth-of-type(3n+1) {
+                margin-left: 0;
+            }
+    </style>
+
+</head>
+<body>
+
+    <div class="paddingBlock">
+        <h1>EQUAL HEIGHT COLUMNS</h1>
+        <p>Simply add display:flex to the parent</p>
+        <div class="equalHWrap eqWrap">
+            <div class="equalH eq">boo <br> boo</div>
+            <div class="equalH eq">shoo</div>
+            <div class="equalH eq">clue</div>
+        </div>
+    </div>
+
+    <div class="paddingBlock">
+        <h1>EQUAL HEIGHT + WIDTH COLUMNS</h1>
+        <p>Add display:flex to the parent and flex:1 to the boxes</p>
+        <div class="equalHWrap eqWrap">
+            <div class="equalHW eq">boo <br> boo</div>
+            <div class="equalHW eq">shoo</div>
+            <div class="equalHW eq">clue</div>
+        </div>
+    </div>
+
+    <div class="paddingBlock">
+        <h1>EQUAL HEIGHT + WIDTH COLUMNS WITH MARGINS</h1>
+        <p>Add display:flex, justify-content: space-between; to the parent and give a width to the boxes that totals to less than 100%. E.g. These boxes have a width of 32% each. The remaining width of 4% (i.e. 32 x 3 = 96%) will be used to create the space between the boxes and simulate margins. No need to remove margins on the first and last child!</p>
+        <div class="equalHMWrap eqWrap">
+            <div class="equalHM eq">boo <br> boo</div>
+            <div class="equalHM eq">shoo</div>
+            <div class="equalHM eq">clue</div>
+        </div>
+    </div>
+
+    <div class="paddingBlock">
+        <h1>EQUAL HEIGHT COLUMNS WITH MARGINS IN MULTIPLE ROWS</h1>
+        <p>Building on the above example, just give bottom margins to the boxes. Add a flex-wrap: wrap to the parent, so that boxes go to the next line when they run out of space in a 'row'.</p>
+        <div class="equalHMRWrap eqWrap">
+            <div class="equalHMR eq">boo</div>
+            <div class="equalHMR eq">shoo</div>
+            <div class="equalHMR eq">clue</div>
+            <div class="equalHMR eq">boo <br> boo </div>
+            <div class="equalHMR eq">shoo</div>
+            <div class="equalHMR eq">clue</div>
+        </div>
+    </div>
+
+    <div class="paddingBlock">
+        <h1>EQUAL HEIGHT COLUMNS WITH MARGINS IN MULTIPLE ROWS and VARIABLE NO OF BOXES</h1>
+        <p>Add display:flex, flex-wrap: wrap to the parent and give a width to the boxes. Give margins to the boxes and remove the left and right margins of the first and last box in each 'row' using the nth-of-type selector. Unlike the previous example, justify-content: space-between on the parent does not work for an uneven number of boxes, because if there are five boxes in all, the third and fifth will align to the left and right of the perceived 'row'.</p>
+        <div class="equalHMVWrap eqWrap">
+            <div class="equalHMV eq">boo <br> boo</div>
+            <div class="equalHMV eq">shoo</div>
+            <div class="equalHMV eq">clue</div>
+            <div class="equalHMV eq">boo <br> boo </div>
+            <div class="equalHMV eq">clue</div>
+        </div>
+    </div>
+
+
+</body>
+</html>
