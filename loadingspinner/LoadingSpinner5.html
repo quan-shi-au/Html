@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+
+    <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
+
+    <style>
+        .wloader {
+            height: 4px;
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+            background-color: #be1e2d;
+        }
+
+            .wloader:before {
+                display: block;
+                position: absolute;
+                content: "";
+                left: -200px;
+                width: 200px;
+                height: 4px;
+                background-color: #be1e2d;
+                animation: loading 2s linear infinite;
+            }
+
+        @keyframes loading {
+            from {
+                left: -200px;
+                width: 30%;
+            }
+
+            50% {
+                width: 30%;
+            }
+
+            70% {
+                width: 70%;
+            }
+
+            80% {
+                left: 50%;
+            }
+
+            95% {
+                left: 120%;
+            }
+
+            to {
+                left: 100%;
+            }
+        }
+
+        #spinner-dashboard-line1 {
+            position: relative;
+            background-color: #CCC;
+            animation-name: animate;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+            background: -webkit-gradient(linear, left top, right top, color-stop(8%, #eeeeee), color-stop(18%, #dddddd), color-stop(33%, #eeeeee));
+            background: -webkit-linear-gradient(left, #eeeeee 8%, #dddddd 18%, #eeeeee 33%);
+            background: linear-gradient(to right, #fefefe 8%, #f8f8f8 18%, #fefefe 33%);
+            -webkit-background-size: 800px 104px;
+            min-height: 20px;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <div class="row">
+        <div class="col-md-9">
+            <div class="spinner-animation-wrapper">
+                <div class="spinner-animation-loading">
+                    <div class="wloader" style="display:inline-block" id="spinner-dashboard-line1"></div>\
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
