@@ -1,0 +1,21 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+    <div id="foo"></div>
+
+
+    <script>
+        $("#foo").on("click", function () {
+            alert('clicked!!');
+        });
+
+        $("#foo").trigger("click");
+
+    </script>
+</body>
+</html>

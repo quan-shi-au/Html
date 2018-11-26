@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <style>
+
+        .createdDiv {
+            background-color: lightgrey;
+            margin-top: 5px;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class="container">
+        <button id="add-button">Add</button>
+        <div id="container"></div>
+    </div>
+
+    <script>
+
+        $('body').tooltip({
+            selector: '[data-toggle="tooltip"]'
+        });
+
+        $('#add-button').click(function () {
+            $('        <div class="col-md-4 mb-4"> \
+                < section class= "card hvr-shadow" > \
+                <header class="card-header bg-success"> \
+                    <div class="row"> \
+                        <div class="col-md-9"> \
+                            <h4 class="name font-weight-semibold mb-0 mt-0">Jeffs Phone</h4> \
+                        </div> \
+                        <div class="col-md-3 text-right"> \
+                            <a class="modal-basic" href="#deviceManageWin" data-toggle="tooltip" data-placement="left" title="" \
+                                data-original-title="Manage Device"><i class="fas fa-cog" style="color: white; font-size:30px"></i></a> \
+                        </div> \
+                    </div> \
+                    <div class="widget-profile-info mt-2"> \
+                        <div class="profile-picture"> \
+                            <i class="fas fa-mobile-alt" style="color: white; font-size:60px"></i> \
+                        </div> \
+                        <div class="device-info"> \
+                            <i class="fab fa-android" style="color: white; font-size:19px; float:left; margin-right:10px; margin-top:8px"></i> \
+                            <h5 class="role mt-2">Android 7</h5> \
+                            <h5 class="role mt-0">Updated on 08/11/2018</h5> \
+                        </div> \
+                        <div class="device-manage"> \
+                        </div> \
+                    </div> \
+                </header> \
+                <div class="card-device-footer-green text-center"> \
+                    <a href="#" data-toggle="tooltip" data-placement="right" title="" data-original-title="View Device Details"> \
+                        move here\
+                    </a> \
+                </div> \
+            </section > \
+        </div > \
+').appendTo('#container');
+        });
+
+    </script>
+
+</body>
+</html>
