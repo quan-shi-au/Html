@@ -1,0 +1,59 @@
+﻿<html>
+<head>
+
+    <style>
+        section.section {
+            background: transparent;
+        }
+
+        .slideshow {
+            box-shadow: 0px 0px 40px rgba(0,0,0,.3);
+        }
+
+            .slideshow .slide img {
+                max-width: 100%;
+                width: 100%;
+            }
+
+            .slideshow .slick-prev:before, .slideshow .slick-next:before {
+                color: black;
+            }
+    </style>
+</head>
+<body>
+    <section class="section">
+        <div class="columns">
+            <div class="column is-10 is-offset-1">
+                <h3 class="title is-3">
+                    Slick Slider
+                </h3>
+                <div class="slideshow">
+                    <div class="slide">
+                        <img src="https://res.cloudinary.com/setholito/image/upload/c_scale,w_1000/v1470969182/brody/spring-2016/IMG_7056.jpg" alt="" />
+                    </div>
+                    <div class="slide">
+                        <img src="https://res.cloudinary.com/setholito/image/upload/c_scale,w_1000/v1470969182/brody/spring-2016/IMG_7041.jpg" alt="" />
+                    </div>
+                    <div class="slide">
+                        <img src="https://res.cloudinary.com/setholito/image/upload/c_scale,w_1000/v1470969182/brody/spring-2016/IMG_7196.jpg" alt="" />
+                    </div>
+                    <div class="slide">
+                        <img src="https://res.cloudinary.com/setholito/image/upload/c_scale,w_1000/v1470969182/brody/spring-2016/IMG_7076.jpg" alt="" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        $('.slideshow').slick({
+            infinite: true,
+            autoplay: true,
+            dots: true,
+            arrows: true,
+            autoplaySpeed: 4000
+        });
+    </script>
+
+</body>
+</html>
