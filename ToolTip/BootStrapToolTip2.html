@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css" />
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.js"></script>
+
+
+    <style>
+        .white-popup {
+            position: relative;
+            background: #FFF;
+            padding: 20px;
+            width: auto;
+            max-width: 500px;
+            margin: 20px auto;
+        }
+    </style>
+
+
+</head>
+<body>
+
+    <div class="container">
+        <button class="js-popup">Click me</button>
+    </div>
+
+    <script>
+
+        $(document).ready(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+
+
+        $('.js-popup').on('click', function () {
+            $.magnificPopup.open({
+                items: {
+                    src: `
+                        <div class="container">
+                            < h3 > Tooltip Example</h3>
+                            <a href="#" data-toggle="tooltip" title="Hooray!">Hover over me</a>
+                        </div>
+`,
+                    type: 'inline',
+                    closeOnBgClick: 'false',
+                    enableEscapeKey: 'false'
+                },
+                closeOnBgClick: 'false',
+                enableEscapeKey: 'false',
+                modal: 'true',
+                callbacks: {
+                    open: function () {
+                        $('[data-toggle="tooltip"]').tooltip();
+                    }
+                }
+
+
+            });
+        });
+    </script>
+
+
+</body>
+</html>
