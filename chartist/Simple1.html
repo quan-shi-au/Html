@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+    <script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chartist-plugin-legend/0.6.2/chartist-plugin-legend.min.js"></script>
+    <link href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css" rel="stylesheet" type="text/css" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>JS Bin</title>
+
+    <style>
+
+        .ct-chart {
+            margin: auto;
+            width: 200px;
+            height: 200px;
+        }
+
+        .ct-series-a .ct-slice-pie {
+            fill: green;
+        }
+
+        .ct-series-b .ct-slice-pie {
+            fill: yellow;
+        }
+
+        .ct-series-c .ct-slice-pie {
+            fill: red;
+        }
+
+        .ct-label {
+            fill: rgba(0,0,0,.4);
+            color: black;
+            font-size: 1rem;
+            line-height: 1;
+        }
+
+    </style>
+</head>
+<body>
+    <div style="width:30%;">
+        <div class="ct-chart ct-golden-section"></div>
+    </div>
+
+    <script>
+
+        $('.ct-chart').on('created', function (data) {
+            // Append the legend element to the DOM
+            switch (options.position) {
+                case 'top':
+                    chart.container.insertBefore(legendElement, chart.container.childNodes[0]);
+                    break;
+
+                case 'bottom':
+                    chart.container.parentNode.insertBefore(legendElement, null);
+                    break;
+            }
+        });
+
+        var data = {
+            labels: ['Good', 'Attention', 'Infected'],
+            series: [60, 10, 30]
+        };
+
+        var option = {
+            showLabel: false,
+            plugins: [
+                Chartist.plugins.legend({
+                    position: 'bottom'
+                })
+            ]
+        };
+
+        new Chartist.Pie('.ct-chart', data, option);
+
+
+    </script>
+
+
+</body>
+</html>

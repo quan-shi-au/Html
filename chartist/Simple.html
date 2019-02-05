@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+    <script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+    <link href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css" rel="stylesheet" type="text/css" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>JS Bin</title>
+</head>
+<body>
+    <div style="width:30%;">
+        <div class="ct-chart ct-golden-section"></div>
+    </div>
+
+    <script>
+
+        var data = {
+            series: [5, 3, 4]
+        };
+
+        new Chartist.Pie('.ct-chart', data);
+
+
+    </script>
+
+
+</body>
+</html>
