@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        canvas {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="drawingSurface" width="600" height="400">
+        Your browser does not support HTML5.
+    </canvas>
+    <!--<img src="../img/icon_mac_normal.png" />-->
+    <script>
+        window.onload = function () {
+            var drawingSurface = document.getElementById("drawingSurface");
+            var ctxt = drawingSurface.getContext("2d");
+
+            var ctxt = drawingSurface.getContext("2d");
+            ctxt.lineWidth = 3;
+            ctxt.rect(150, 150, 200, 125);
+            var img = new Image();
+            img.src = "../img/icon_mac_normal.png" ;
+            img.onload = function () {
+                var pat = ctxt.createPattern(img, "repeat");
+                ctxt.fillStyle = pat;
+                ctxt.fill();
+                ctxt.stroke();
+            }
+            Figure
+
+
+        }
+
+
+    </script>
+</body>
+</html>

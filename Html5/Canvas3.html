@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        canvas {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="drawingSurface" width="600" height="400">
+        Your browser does not support HTML5.
+    </canvas>
+
+    <script>
+        window.onload = function () {
+            var drawingSurface = document.getElementById("drawingSurface");
+            var ctxt = drawingSurface.getContext("2d");
+
+            ctxt.beginPath();
+            ctxt.arc(300, 200, 75, 1.75 * Math.PI, 1.25 * Math.PI, false);
+            ctxt.lineTo(150, 125);
+            ctxt.quadraticCurveTo(300, 0, 450, 125);
+            ctxt.lineTo(353, 144);
+            ctxt.strokeStyle = "blue";
+            ctxt.lineCap = "round";
+            ctxt.lineWidth = 10;
+            ctxt.stroke();
+
+        }
+
+
+    </script>
+</body>
+</html>
