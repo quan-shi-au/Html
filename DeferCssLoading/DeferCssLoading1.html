@@ -1,0 +1,51 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>jQuery validation plug-in - main demo</title>
+    <!--<link href="style/ValidationStyle.css" rel="stylesheet" />-->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.min.js"></script>
+
+    <script>
+        $(function () {
+
+            setTimeout(
+                () => {
+
+                    $('head').append('<link href="Test1.css" rel="stylesheet" />');
+
+                    //var giftofspeed = document.createElement('link');
+                    //giftofspeed.rel = 'stylesheet';
+                    //giftofspeed.href = 'Test1.css';
+                    //giftofspeed.type = 'text/css';
+                    //var godefer = document.getElementsByTagName('link')[0];
+                    //godefer.parentNode.insertBefore(giftofspeed, godefer);
+
+                },
+                1 * 1000
+            );
+
+        });
+
+    </script>
+
+    <style>
+
+        #div-3 {
+            background-color: grey;
+            width: 50%;
+            margin: auto;
+        }
+    </style>
+
+    <!--<link href="Test1.css" rel="stylesheet" />-->
+
+</head>
+<body>
+    <div id="div-1">this is div-1 </div>
+    <div id="div-2">this is div-2 </div>
+    <div id="div-3">this is div-3 </div>
+</body>
+</html>
