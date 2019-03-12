@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Web Api JWT Example</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous"></script>
+    <style>
+        div {
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="joke"></div>
+
+    <script>
+        async function getData(url) {
+            const dataset = await $.ajax(url);
+            document.querySelector('.joke').innerHTML = dataset.value.joke;
+        }
+
+        getData('https://api.icndb.com/jokes/random');
+
+    </script>
+</body>
+</html>

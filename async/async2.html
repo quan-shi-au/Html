@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Web Api JWT Example</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous"></script>
+    <style>
+        div {
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="joke"></div>
+
+    <script>
+        function request(url, callback) {
+            const xhr = new XMLHttpRequest();
+            xhr.timeout = 2000;
+            xhr.onreadystatechange = function (e) {
+                if (xhr.readyState === 4) {
+                    if (xhr.status === 200) {
+                        callback(null, xhr.response)
+                    } else {
+                        callback(xhr.status, null)
+                    }
+                }
+            }
+            xhr.ontimeout = function () {
+                console.log('Timeout')
+            }
+            xhr.open('get', url, true)
+            xhr.send();
+        }
+
+        function render(status, dataset) {
+            data = JSON.parse(dataset);
+            document.querySelector('.joke').innerHTML = data.value.joke;
+        }
+
+        request('https://api.icndb.com/jokes/random', render);
+
+
+
+    </script>
+</body>
+</html>
