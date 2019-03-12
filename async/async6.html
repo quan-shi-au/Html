@@ -18,11 +18,9 @@
 
     <script>
 
-
         function request(url) {
             return new Promise(function (resolve, reject) {
                 const xhr = new XMLHttpRequest();
-                xhr.timeout = 2000;
                 xhr.onreadystatechange = function (e) {
                     if (xhr.readyState === 4) {
                         if (xhr.status === 200) {
@@ -36,29 +34,30 @@
                     reject('timeout')
                 }
                 xhr.open('get', url, true)
-                xhr.send();
-            })
-        }
-
-
-        const userGet = `https://api.github.com/search/users?page=1&q=daspinola&type=Users`
-        const myPromise = request(userGet)
-        console.log('will be pending when logged', myPromise)
-        myPromise
-            .then(function handleUsersList(users) {
-                console.log('when resolve is found it comes here with the response, in this case users ', users)
-                const list = JSON.parse(users).items
-                return Promise.all(list.map(function (user) {
-                    return request(user.repos_url)
-                }))
-            })
-            .then(function handleReposList(repos) {
-                console.log('All users repos in an array', repos)
-            })
-            .catch(function handleErrors(error) {
-                console.log('when a reject is executed it will come here ignoring the then statement ', error)
+                xhr.send()
             })
 
+            async function list() {
+                const userGet = `https://api.github.com/search/users?page=1&q=daspinola&type=Users`
+
+                const users = await request(userGet)
+                const usersList = JSON.parse(users).items
+
+                usersList.forEach(async function (user) {
+                    const repos = await request(user.repos_url)
+
+                    handleRepoList(user, repos)
+                })
+            }
+
+            function handleRepoList(user, repos) {
+                const userRepos = JSON.parse(repos)
+
+                // Handle each individual user repo here
+                console.log(user, userRepos);
+            }
+
+            list().catch(e => console.error(e));
 
     </script>
 </body>

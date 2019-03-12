@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Web Api JWT Example</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous"></script>
+    <style>
+        div {
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="joke"></div>
+
+    <script>
+
+        function request(url) {
+            return function (callback) {
+                const xhr = new XMLHttpRequest();
+                xhr.onreadystatechange = function (e) {
+                    if (xhr.readyState === 4) {
+                        if (xhr.status === 200) {
+                            callback(null, xhr.response)
+                        } else {
+                            callback(xhr.status, null)
+                        }
+                    }
+                }
+                xhr.ontimeout = function () {
+                    console.log('timeout')
+                }
+                xhr.open('get', url, true)
+                xhr.send()
+            }
+        }
+
+        function* list() {
+            const userGet = `https://api.github.com/search/users?page=1&q=daspinola&type=Users`
+
+            const users = yield request(userGet)
+
+            yield
+
+            for (let i = 0; i <= users.length; i++) {
+                yield request(users[i].repos_url)
+            }
+        }
+
+        try {
+            const iterator = list()
+            iterator.next().value(function handleUsersList(err, users) {
+                if (err) throw err
+                const list = JSON.parse(users).items
+
+                // send the list of users for the iterator
+                iterator.next(list)
+
+                list.forEach(function (user) {
+                    iterator.next().value(function userRepos(error, repos) {
+                        if (error) throw repos
+                        // Handle each individual user repo here
+                        console.log(user, JSON.parse(repos))
+                    })
+                })
+            })
+        } catch (e) {
+            console.error(e)
+        }
+
+    </script>
+</body>
+</html>

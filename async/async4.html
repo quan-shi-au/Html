@@ -42,23 +42,27 @@
 
 
         const userGet = `https://api.github.com/search/users?page=1&q=daspinola&type=Users`
-        const myPromise = request(userGet)
-        console.log('will be pending when logged', myPromise)
-        myPromise
-            .then(function handleUsersList(users) {
-                console.log('when resolve is found it comes here with the response, in this case users ', users)
-                const list = JSON.parse(users).items
-                return Promise.all(list.map(function (user) {
-                    return request(user.repos_url)
-                }))
-            })
-            .then(function handleReposList(repos) {
-                console.log('All users repos in an array', repos)
-            })
-            .catch(function handleErrors(error) {
-                console.log('when a reject is executed it will come here ignoring the then statement ', error)
-            })
-
+        const userRequest = request(userGet)
+        // Just by reading this part out loud you have a good idea of what the code does
+        userRequest
+            .then(handleUsersList)
+            .then(repoRequest)
+            .then(handleReposList)
+            .catch(handleErrors)
+        function handleUsersList(users) {
+            return JSON.parse(users).items
+        }
+        function repoRequest(users) {
+            return Promise.all(users.map(function (user) {
+                return request(user.repos_url)
+            }))
+        }
+        function handleReposList(repos) {
+            console.log('All users repos in an array', repos)
+        }
+        function handleErrors(error) {
+            console.log('when a reject is executed it will come here ignoring the then statement ', error)
+        }
 
     </script>
 </body>
