@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+
+    <script>
+
+        function Book() {
+
+        }
+
+        function Book(title, length, author) {
+            this.title = title;
+            this.length = length;
+            this.author = author;
+        }
+
+        Book.prototype = {
+            title: "default title",
+            length: 0,
+            author: "default author",
+
+            addLength: function addLengthLocal() {
+                if (!this.length)
+                    this.length = 0;
+
+                this.length++;
+
+                return this.length;
+            }
+
+        }
+
+        var book1 = new Book();
+        var book2 = new Book('Journy Home', 500, 'swami Radthnama');
+
+        console.log('book1\'s title is ' + book1.title);
+        console.log('book2\'s title is ' + book2.title);
+
+        book1.addLength();
+        console.log('book1\'s length is ' + book1.length);
+
+
+        book2.addLength();
+        console.log('book2\'s length is ' + book2.length);
+
+        function PopUpBook() {
+            Book.call(this);
+        }
+
+        PopUpBook.prototype = Book.prototype;
+        PopUpBook.prototype.hasSound = false;
+        PopUpBook.prototype.showPopUp = function ShowPop() { };
+
+        var popupBook = new PopUpBook();
+
+        console.log(popupBook);
+
+
+
+    </script>
+</body>
+</html>
