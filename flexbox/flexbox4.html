@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+
+        #flexbox1 {
+            display: flex;
+            border: 1px solid black;
+            margin-top: 100px;
+            min-height: 15px;
+            flex-direction:row;
+            flex-wrap:wrap;
+            width:200px;
+        }
+
+        #flexbox1 > div {
+            min-width:80px;
+            min-height: 80px;
+            border: 1px solid black;
+            margin: 5px;
+        }
+
+            #flexbox1 > div:nth-child(1) {
+                background-color: green;
+            }
+
+            #flexbox1 > div:nth-child(2) {
+                background-color: yellow;
+            }
+
+            #flexbox1 > div:nth-child(3) {
+                background-color: red;
+            }
+            #flexbox1 > div:nth-child(4) {
+                background-color: purple;
+            }
+            #flexbox1 > div:nth-child(5) {
+                background-color: blue;
+            }
+
+    </style>
+
+</head>
+<body>
+    <div id="flexbox1">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</body>
+</html>
