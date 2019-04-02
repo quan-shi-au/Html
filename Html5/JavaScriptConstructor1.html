@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Web Page</title>
+    <script language="javascript">
+
+        function Tree(name) {
+            this.name = name;
+        }
+
+        var theTree = new Tree('Redwood');
+        console.log('theTree.constructor is ' + theTree.constructor);
+
+        // instance doesn't have a constructor
+        console.log('theTree.prototype is ' + theTree.prototype);
+
+        // the constructor function has a prototype
+        console.log('Tree.prototype is ' + Tree.prototype);
+
+
+
+    </script>
+</head>
+<body>
+</body>
+</html>

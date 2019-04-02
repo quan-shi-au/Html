@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Web Page</title>
+    <script language="javascript">
+
+        /*
+         * function Mammal(){
+}
+Mammal.prototype.breathe = function(){
+    // do some breathing
+}
+function Cat(){
+}
+Cat.prototype = new Mammal()
+Cat.prototype.constructor = Cat
+// now cat too can breathe!
+         * 
+         * 
+         */
+
+
+        function ParentWithStatic() { }
+
+        ParentWithStatic.startPosition = { x: 0, y: 0 };
+        ParentWithStatic.getStartPosition = function getStartPosition() {
+            return this.startPosition;
+        }
+
+        ParentWithStatic.prototype.sharedFunction = function sharedFunction(x) {
+            console.log(x + ' is shared');
+        }
+
+        function Child(x, y) {
+            this.position = {
+                x: x,
+                y: y
+            };
+        }
+
+        debugger;
+
+        Child.prototype = Object.create(ParentWithStatic);
+        //Child.prototype = Object.create(ParentWithStatic.prototype);
+        Child.prototype.constructor = Child;
+
+        Child.prototype.getOffsetbyInitialPosition = function getOffsetByInitialPosition() {
+            var position = this.position;
+            var startPosition = this.sharedFunction();
+
+            //return {
+            //    offsetX: startPosition.x - position.x,
+            //    offsetY: startPosition.y - position.y
+            //}
+
+
+        };
+
+        var child = new Child(100, 100);
+        child.getOffsetbyInitialPosition();
+
+
+    </script>
+</head>
+<body>
+</body>
+</html>

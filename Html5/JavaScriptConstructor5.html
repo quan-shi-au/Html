@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Web Page</title>
+    <script language="javascript">
+
+        function Mammal() {
+        }
+
+        Mammal.prototype.breathe = function () {
+            // do some breathing
+        }
+        function Cat() {
+        }
+
+        debugger;
+
+        Cat.prototype = new Mammal()
+
+        Cat.prototype.constructor = Cat
+// now cat too can breathe!
+
+    </script>
+</head>
+<body>
+</body>
+</html>

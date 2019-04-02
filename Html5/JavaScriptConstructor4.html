@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Web Page</title>
+    <script language="javascript">
+
+   // define the Person Class
+        function Person(name) {
+            this.name = name;
+        }
+
+        Person.prototype.copy = function () {
+            return new this.constructor(this.name);
+        }
+
+        // define the Student class
+        function Student(name) {
+            Person.call(this, name);
+        }
+
+        Student.prototype = Object.create(Person.prototype);
+        Student.prototype.constructor = Student;
+
+        var student1 = new Student("trinth");
+        console.log(student1.copy() instanceof Student);
+
+
+
+
+    </script>
+</head>
+<body>
+</body>
+</html>

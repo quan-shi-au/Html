@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Web Page</title>
+    <script language="javascript">
+
+        function Human(firstName, lastName) {
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.fullName = function () {
+                return this.firstName + " " + this.lastName;
+            }
+        }
+
+        var person1 = new Human("Virat", "Koli");
+
+        console.log(person1);
+
+        if (Human)
+            console.log(Human.prototype);
+
+        // constructor returns back to original function.
+        if (Human.prototype.constructor)
+            console.log(Human.prototype.constructor);
+
+        console.log(Human.prototype == person1.__proto__);
+
+
+        var person2 = new Human("Sachin", "Tendulkar");
+        console.log(person2);
+
+
+    </script>
+</head>
+<body>
+</body>
+</html>
