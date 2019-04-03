@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Web Page</title>
+    <script language="javascript">
+        function bike() {
+            console.log(this.name);
+        }
+
+        var name = "Ninja";
+
+        var obj1 = { name: "Pulsar", bike: bike };
+        var obj2 = { name: "Gixxer", bike: bike };
+
+        bike();
+        // implicit binding of this
+        obj1.bike();
+        obj2.bike();
+
+        // explicit binding of this
+        bike.call(obj1);
+
+        bike.apply(obj1);
+
+
+    </script>
+</head>
+<body>
+</body>
+</html>

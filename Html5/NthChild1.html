@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Web Page</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+</head>
+<body>
+    <table>
+        <tr>
+            <td>Item</td>
+            <td>Input</td>
+            <td>Current</td>
+        </tr>
+        <tr>
+            <td>First Name</td>
+            <td>
+                <input type="text" />
+            </td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Last Name</td>
+            <td>
+                <input type="text" />
+            </td>
+            <td></td>
+        </tr>
+    </table>
+
+    <script language="javascript">
+        $(document).ready(function () {
+
+            //debugger;
+
+            $('table td:nth-child(2) input').focus(function () {
+
+                //debugger;
+
+                $(this).parent().next().css("background-color", "#00FF00");
+            });
+
+            $('table td:nth-child(2) input').blur(function () {
+
+                debugger;
+
+                $(this).parent().next().css("background-color", "#FFFFFF");
+            });
+        });
+
+
+    </script>
+
+</body>
+</html>
