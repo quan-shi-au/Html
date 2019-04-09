@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Web Page</title>
+    <script language="javascript">
+
+/*
+ *             Formatter.prototype.parseValue = function (input) {
+                return _private(input);
+            }
+ */ 
+
+        function getFormatter() {
+
+            var _private = function (data) {
+                return data * 2;
+            }
+
+            return {
+                parseValue: function (input) {
+                    return _private(input);
+                }
+            }
+        }
+
+        var myFormatter = new getFormatter();
+        var result = myFormatter.parseValue(2);
+        console.log(result);
+
+        function writeALine() {
+            console.log("it is from write a line.")
+        }
+
+        var intervalHandle = setInterval(writeALine, 1000);
+
+        //var x = new Timer();
+        //console.log(x);
+
+    </script>
+</head>
+<body>
+</body>
+</html>
