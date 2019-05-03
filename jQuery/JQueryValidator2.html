@@ -1,0 +1,41 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.min.js"></script>
+    <script>
+
+        $().ready(function () {
+
+            $("#signupForm").validate({
+                rules: {
+                    firstname: "required",
+                    lastname: "required"
+                },
+                messages: {
+                    firstname: "Please enter your firstname",
+                    lastname: "Please enter your lastname"
+                }
+            });
+
+        });
+    </script>
+</head>
+<body>
+    <form class="cmxform" id="signupForm" method="get" action="">
+        <p>
+            <label for="firstname">Firstname</label>
+            <input id="firstname" name="firstname" type="text">
+        </p>
+        <p>
+            <label for="lastname">Lastname</label>
+            <input id="lastname" name="lastname" type="text">
+        </p>
+        <p>
+            <input class="submit" type="submit" value="Submit">
+        </p>
+    </form>
+</body>
+</html>
