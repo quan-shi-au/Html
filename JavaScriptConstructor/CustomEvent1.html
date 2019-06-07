@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+
+    <style>
+        .blue {
+            background-color: blue;
+        }
+
+        #target {
+            height: 100px;
+            width: 100px;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div id="target">target</div>
+    <div id="note">note</div>
+    <input tye="button" value="click me to change" onclick="makeBlue(elem);"/>
+
+    <script>
+
+        var makeBlue = function (elem) {
+            elem.classList.add('blue');
+
+            var event = new CustomEvent('madeBlue');
+
+            elem.dispatchEvent(event);
+        }
+
+        var elem = document.querySelector('#target');
+
+        elem.addEventListener('madeBlue', function (elem) {
+            document.querySelector('#note').innerText = 'it is made blue now.';
+        }, false);
+
+        
+
+    </script>
+</body>
+</html>

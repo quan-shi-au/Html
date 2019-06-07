@@ -1,0 +1,52 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+    <link href="custombox.min.css" rel="stylesheet" />
+    <script src="custombox.min.js"></script>
+    <script src="custombox.legacy.min.js"></script>
+</head>
+<body>
+    <div id="modal" style="display:none;">
+        inside modal
+
+        <button onclick="Custombox.modal.close();">close me</button>
+    </div>
+
+
+    <a data-modal-target="#modal"
+       data-modal-effect="fade">
+        Protect Me Now
+    </a>
+
+    <div>
+        main content
+        <button onclick="openModal()">
+            click me
+        </button>
+    </div>
+    <script>
+
+        function openModal() {
+
+            // Instantiate new modal
+            var modal = new Custombox.modal({
+                content: {
+                    effect: 'fadein',
+                    target: '#modal'
+                }
+            });
+
+            // Open
+            modal.open();
+
+        }
+
+
+    </script>
+</body>
+</html>

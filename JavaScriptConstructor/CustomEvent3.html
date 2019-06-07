@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+
+    <style>
+        .room {
+            display:block;
+        }
+
+            .room div {
+                display:inline-block;
+                height: 100px;
+                width: 100px;
+                margin: 15px;
+                background-color: dimgrey;
+            }
+
+        div.lightbulb.on {
+
+            background-color: orange;
+
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class="room" id="kitchen">
+        <div class="lightbulb on"></div>
+        <div class="switch" id="switch1"></div>
+        <div class="switch" id="switch2"></div>
+        <div class="clapper"></div>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+
+        $(".lightbulb").on("light:toggle", function (event, arg1) {
+
+            var light = $(this);
+            if (light.is(".on")) {
+                light.removeClass("on");
+            } else {
+                light.addClass("on");
+            }
+
+            $(this).text(arg1.attr('id'));
+        });
+
+        $(".switch, .clapper").click(function () {
+            var room = $(this).closest(".room");
+
+            room.find(".lightbulb").trigger("light:toggle", [$(this)]);
+        });
+
+    </script>
+
+</body>
+</html>
