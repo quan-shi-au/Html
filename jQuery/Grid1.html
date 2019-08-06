@@ -1,0 +1,36 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.min.js"></script>
+</head>
+<body>
+    <label for="loanTypes">Loan Types</label>
+
+    <select name="loanTypes" id="loanTypes" multiple="multiple">
+        <option>Secured</option>
+        <option selected="selected">Unsecured</option>
+        <option>Demand</option>
+        <option selected="selected">Subsidized</option>
+    </select>
+
+    <script>
+
+        var selectedValues1 = "";
+        $("select option:selected").each(function () {
+            selectedValues1 += $(this).text() + ',';
+            console.log('selectedValues1 is ' + selectedValues1);
+        });
+
+        var selectedValues2 = "";
+        $("#loanTypes option:selected").each(function () {
+            selectedValues2 += $(this).text() + ',';
+            console.log("selectedValue2 is " + selectedValues2);
+        });
+
+    </script>
+
+</body>
+</html>

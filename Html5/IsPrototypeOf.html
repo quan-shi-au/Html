@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+
+    <script>
+
+        function object1() { }
+
+        function object2() {
+
+        }
+
+        object1.prototype = Object.create(object2.prototype);
+
+        const object3 = new object1();
+
+        console.log(object1.prototype.isPrototypeOf(object3));
+
+        console.log(object2.prototype.isPrototypeOf(object3));
+
+
+    </script>
+
+</body>
+</html>
