@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Web Page</title>
+    <script language="javascript">
+        function zoomIn1() {
+            var myGraphic = document.getElementById("myGraphic");
+            myGraphic.createSVGTransform(1.5);
+        }
+
+        function zoomIn2() {
+            var myGraphic = document.getElementById('myGraphic');
+            myGraphic.setAttribute("currentScale", 1.5)
+        }
+
+        function zoomIn3() {
+            var myCircle = document.getElementById("myCircle");
+            myCircle.setAttribute("currentScale", 1.5);
+        }
+
+        function zoomIn() {
+            var myCircle = document.getElementById("myCircle");
+            myCircle.r = myCircle.r * 1.5;
+        }
+    </script>
+</head>
+<body>
+    <svg height="150" width="150" id="myGraphic">
+        <circle cx="25" r="20" cy="20" fill="orange" id="myCircle"></circle>
+    </svg>
+
+    <button id="zoom" onclick="zoomIn();">Zoom In</button>
+</body>
+</html>
