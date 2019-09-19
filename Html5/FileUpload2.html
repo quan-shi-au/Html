@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <title></title>
+</head>
+<body>
+    <input type="file" onchange="onFileChange(event)" id="importFile" />
+
+    <script>
+        function onFileChange(event) {
+
+            if (event.target.files && event.target.files.length) {
+
+                var file = event.target.files[0];
+                var formData = new FormData();
+                formData.append("Files", file);
+                formData.append("SubscriptionId", "9");
+
+                $.ajax({
+                    type: "POST",
+                    url: "http://localhost:55904/api/v1/subuser/import",
+                    beforeSend: function (request) {
+                        request.setRequestHeader("Authorization", "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoid2VtcC5hZG1pbkB3b250b2suY29tIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiYWRtaW4iLCJuYmYiOiIxNTY1MTM4MTMxIiwiZXhwIjoiMTU2NTE0MTczMSJ9.5vTAJWKS4rrtijaBU4z-CgEAPmQkEawi9A9o82BmgCk");
+                    },
+                    success: function (data) {
+                        // your callback here
+                    },
+                    error: function (error) {
+                        // handle error
+                    },
+                    async: true,
+                    data: formData,
+                    cache: false,
+                    contentType: false,
+                    processData: false,
+                    timeout: 60000
+                });
+            }
+
+
+
+        }
+    </script>
+</body>
+</html>

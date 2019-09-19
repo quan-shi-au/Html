@@ -18,9 +18,14 @@
             myCircle.setAttribute("currentScale", 1.5);
         }
 
-        function zoomIn() {
+        function zoomIn4() {
             var myCircle = document.getElementById("myCircle");
             myCircle.r = myCircle.r * 1.5;
+        }
+
+        function zoomIn() {
+            var myCircle = document.getElementById("myCircle");
+            myCircle.setAttribute("transform", "scale(1.5)");
         }
     </script>
 </head>
