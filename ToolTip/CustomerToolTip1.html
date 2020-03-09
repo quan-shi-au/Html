@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+
+    <style>
+
+        .mytooltip {
+            display: inline;
+            position: relative;
+        }
+
+        .mytooltip:hover:after {
+            background: #333;
+            background: rgba(0,0,0,.8);
+            border-radius: 5px;
+            bottom: 26px;
+            color: #fff;
+            content: attr(mytitle);
+            left: 20%;
+            padding: 5px 15px;
+            position: absolute;
+            z-index: 98;
+            width: 220px;
+        }
+
+    </style>
+</head>
+<body>
+    <div style="height:5%;margin-top:100px;">
+        ook
+    </div>
+    <a mytitle="This is some information for our tooltip." class="mytooltip">CSS3 Tooltip</a>
+    <div style="height:5%;">
+
+    </div>
+
+</body>
+</html>
